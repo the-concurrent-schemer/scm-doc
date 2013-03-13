@@ -109,6 +109,8 @@ for more information later._
   * +let*+
   * +letrec+
   * +letrec*+
+  * +let-values+
+  * +let*-values+
   * +begin+
   * +do+
   * +make-parameter+
