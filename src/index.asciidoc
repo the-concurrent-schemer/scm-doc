@@ -1,0 +1,232 @@
+// -*- Doc -*-
+// vim: set syntax=asciidoc:
+
+= The Concurrent Schemer
+Joseph Wayne Norton <norton@alum.mit.edu>
+:Author Initials: JWN
+:toc2:
+:icons:
+:website: http://the-concurrent-schemer.github.com/scm-doc/
+:backend: bootstrap-docs
+:link-assets:
+
+== Overview
+
+"The Concurrent Schemer" (CSCM) is an implementation of the Scheme
+programming language built on top of the Erlang Virtual Machine.  CSCM
+combines the sequential programming model of Scheme with the
+concurrent, distributed, and fault-tolerant programming model of
+Erlang.  The default language is Scheme R7RS.  The default virtual
+machine is Erlang/OTP R16B or higher.
+
+Scheme is a statically scoped and properly tail recursive dialect of
+the Lisp programming language invented by Guy Lewis Steele Jr. and
+Gerald Jay Sussman at MIT.  It was designed to have exceptionally
+clear and simple semantics and few different ways to form expressions.
+A wide variety of programming paradigms, including imperative,
+functional, and object-oriented styles, find convenient expression in
+Scheme.
+
+Erlang is a programming language used to build massively scalable,
+soft, real-time systems with requirements on high availability.
+Erlang's runtime system has built-in support for concurrency,
+distribution and fault tolerance.  It is designed at the Ericsson
+Computer Science Laborary and is maintained as an open-source project
+and community.
+
+CAUTION: _This documentation is under construction.  Please stay tuned
+for more information later._
+
+== Features
+
+- The following standard features are supported or planned to be
+  supported:
+
+  * +r7rs+
+  * +exact-closed+
+  * +exact-complex+
+  * +ieee-float+
+  * +full-unicode+
+  * +ratios+
+  * +posix+ when the Erlang +os:type/0+ function returns +unix+ for
+    +Osfamily+.
+  * +windows+ when the Erlang +os:type/0+ function returns +win32+ for
+    +Osfamily+.
+  * +<Osfamily>+ as returned by Erlang os:type/0 function
+  * +<Osname>+ as returned by Erlang os:type/0 function
+  * +<Otprel>+ as returned by Erlang erlang:system_info/1 function for
+    +'otp_release'+
+  * +<Sysarch>+ as returned by Erlang erlang:system_info/1 function
+    for +'system_architecture'+
+  * Subparts of +<Sysarch>+ split by the "-" character token
+  * +<Wordsize>+ as returned by Erlang erlang:system_info/1 function
+    for +{'wordsize', 'external'}+ multiplied by 8
+  * +big-endian+
+  * +scm+
+  * +scm-X.Y.Z+ where X is the major, Y is the minor, and Z is the
+    patch release version of scm
+
+== Roadmap
+
+- Programming
+  * Sequential
+  * Concurrent
+  * Open Telecom Platform (OTP)
+- Libraries, Tools, and Integration
+- Applications
+- Deployments
+- Education and Training
+
+== Limitations
+
+- The +#!fold-case+ and +#!no-fold-case+ directives are treated as
+  comments and have no effect on identifiers and character names read
+  from the same port.
+
+- Inexact constants have double precision regardless of the specified
+  exponent marker.
+
+- The following symbols are reserved and not allowed as a variable in
+  +set!+ and +define+ procedure calls:
+
+  * +quote+
+  * +label+
+  * +labelref+
+  * +set!+
+  * +define+
+  * +if+
+  * +lambda+
+  * +include+
+  * +include-ci+
+  * +cond+
+  * +case+
+  * +and+
+  * +or+
+  * +when+
+  * +unless+
+  * +cond-expand+
+  * +let+
+  * +let*+
+  * +letrec+
+  * +letrec*+
+  * +begin+
+  * +do+
+  * +make-parameter+
+  * +parameterize+
+  * +guard+
+  * +quasiquotation+
+  * +unquote+
+  * +unquote-splicing+
+
+- The following +(scheme base)+ library exports are not supported:
+  * +set-car!+
+  * +set-cdr!+
+  * +list-set!+
+
+// == Quickstart
+//
+// To download and build the scm application in one shot, please follow
+// this recipe:
+//
+// ------
+// $ mkdir working-directory-name
+// $ cd working-directory-name
+// $ git clone https://github.com/the-concurrent-schemer/scm.git scm
+// $ cd scm
+// $ make deps clean compile
+// ------
+//
+// - start REPL
+// - eval an expression
+// - compile a source file or files
+// - ...
+
+[bibliography]
+=== CSCM Resources
+
+An incomplete list of CSCM resources.
+
+- website
+- faq
+- documentation
+  * user's guide
+  * contributor's guide
+  * sample code and sample applications
+- community mailing list
+  * announce
+  * questions
+  * bugs
+  * patches
+- contributor site
+  * source code repositories
+  * issue tracker
+
+[bibliography]
+=== Scheme Resources
+
+An incomplete list of Scheme resources.
+
+[bibliography]
+.Books
+- [[[SICP]]] Structure and Interpretation of Computer Programs.
+  http://mitpress.mit.edu/sicp/
+
+[bibliography]
+.Specifications
+- [[[RNRS]]] Scheme Reports Process. http://www.scheme-reports.org
+
+- [[[R7RS]]] R7RS _Draft_. 'Revised 7th Report on the Algorithmic
+  Language
+  Scheme'. http://www.scheme-reports.org/2012/working-group-1.html
+
+[bibliography]
+.Websites
+- [[[SCMPEDIA]]] Scheme (programming
+  language). http://en.wikipedia.org/wiki/Scheme_(programming_language)[http://en.wikipedia.org/wiki/Scheme_(programming_language)]
+
+- [[[MITSCM]]] Scheme. 'MIT/GNU
+  Scheme'. http://groups.csail.mit.edu/mac/projects/scheme/index.html
+
+- [[[SCMORG]]] '(schemers . org): an improper list of Scheme
+  resources. http://www.schemers.org
+
+- [[[SCMWIKI]]]
+  Commmunity-Scheme-Wiki. http://community.schemewiki.org
+
+[bibliography]
+=== Erlang Resources
+
+An incomplete list of Erlang resources.
+
+[bibliography]
+.Books
+- [[[JAERLANG]]] Programming Erlang: Software for a Concurrent World.
+  http://pragprog.com/book/jaerlang/programming-erlang
+
+- [[[LYSE]]] Learn You Some Erlang for great good! http://learnyousomeerlang.com
+
+[bibliography]
+.Websites
+- [[[ERLPEDIA]]] Erlang (programming
+  language). http://en.wikipedia.org/wiki/Erlang_(programming_language)[http://en.wikipedia.org/wiki/Erlang_(programming_language)]
+
+- [[[ERLANG]]] ERLANG programming language. http://www.erlang.org
+
+- [[[EUC]]] Erlang User Conference. http://www.erlang.org/euc
+
+- [[[EFACTORY]]] Erlang Factory. http://erlang-factory.com/
+
+- [[[ACMERLANG]]] ACM SIGPLAN Erlang
+  Workshops. http://www.erlang.org/workshop
+
+[bibliography]
+=== Related Resources
+
+An incomplete list of related resources.
+
+- [[[ELIXIR]]] elixir. http://elixir-lang.org
+
+- [[[LFE]]] Lisp Flavored Erlang. http://lfe.github.com
+
+- [[[TERMITE]]] Termite Scheme. http://code.google.com/p/termite/
+

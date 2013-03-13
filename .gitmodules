@@ -1,0 +1,6 @@
+[submodule "src/bootstrap"]
+	path = src/bootstrap
+	url = git://github.com/twitter/bootstrap.git
+[submodule "src/bootstrap-docs"]
+	path = src/bootstrap-docs
+	url = git://github.com/mojavelinux/asciidoc-bootstrap-docs-backend.git
