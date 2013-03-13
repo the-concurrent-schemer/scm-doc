@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="AsciiDoc 8.6.8, bootstrap-docs backend">
+    <title>The Concurrent Schemer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Joseph Wayne Norton">
+    <link href="./bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+    <link href="./bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="./bootstrap/docs/assets/ico/favicon.ico">
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="jumbotron subhead" id="overview">
+      <div class="container">
+        <h1>The Concurrent Schemer</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="sidebar" class="span3 bs-docs-sidebar">
+          <ul id="toc" class="nav nav-list bs-docs-sidenav">
+</ul>
+        </div>
+        <div id="content" class="span9">
+<section id="overview">
+  <div class="page-header">
+    <h1>Overview</h1>
+  </div>
+<p>"The Concurrent Schemer" (CSCM) is an implementation of the Scheme
+programming language built on top of the Erlang Virtual Machine.  CSCM
+combines the sequential programming model of Scheme with the
+concurrency, distributed, and fault-tolerance programming model of
+Erlang.  The default language is Scheme R7RS.  The default virtual
+machine is Erlang/OTP R16B or higher.</p>
+<p>Scheme is a statically scoped and properly tail recursive dialect of
+the Lisp programming language invented by Guy Lewis Steele Jr. and
+Gerald Jay Sussman at MIT.  It was designed to have exceptionally
+clear and simple semantics and few different ways to form expressions.
+A wide variety of programming paradigms, including imperative,
+functional, and object-oriented styles, and convenient expression in
+Scheme.</p>
+<p>Erlang is a programming language used to build massively scalable,
+soft, real-time systems with requirements on high availability.
+Erlang&#8217;s runtime system has built-in support for concurrency,
+distribution and fault tolerance.  It is designed at the Ericsson
+Computer Science Laborary and is maintained as an open-source project
+and community.</p>
+<p><span class="label label-caution">Caution</span> <small>This documentation is under construction.  Please stay tuned
+for more information later.</small></p>
+</section>
+<section id="features">
+  <div class="page-header">
+    <h1>Features</h1>
+  </div>
+<ul>
+<li>
+The following standard features are supported or planned to be
+  supported:
+<ul>
+<li>
+<code>r7rs</code>
+</li>
+<li>
+<code>exact-closed</code>
+</li>
+<li>
+<code>exact-complex</code>
+</li>
+<li>
+<code>ieee-float</code>
+</li>
+<li>
+<code>full-unicode</code>
+</li>
+<li>
+<code>ratios</code>
+</li>
+<li>
+<code>posix</code> when the Erlang <code>os:type/0</code> function returns <code>unix</code> for
+    <code>Osfamily</code>.
+</li>
+<li>
+<code>windows</code> when the Erlang <code>os:type/0</code> function returns <code>win32</code> for
+    <code>Osfamily</code>.
+</li>
+<li>
+<code>&lt;Osfamily&gt;</code> as returned by Erlang os:type/0 function
+</li>
+<li>
+<code>&lt;Osname&gt;</code> as returned by Erlang os:type/0 function
+</li>
+<li>
+<code>&lt;Otprel&gt;</code> as returned by Erlang erlang:system_info/1 function for
+    <code><em>otp_release</em></code>
+</li>
+<li>
+<code>&lt;Sysarch&gt;</code> as returned by Erlang erlang:system_info/1 function
+    for <code><em>system_architecture</em></code>
+</li>
+<li>
+Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
+</li>
+<li>
+<code>&lt;Wordsize&gt;</code> as returned by Erlang erlang:system_info/1 function
+    for <code>{<em>wordsize</em>, <em>external</em>}</code> multiplied by 8
+</li>
+<li>
+<code>big-endian</code>
+</li>
+<li>
+<code>scm</code>
+</li>
+<li>
+<code>scm-X.Y.Z</code> where X is the major, Y is the minor, and Z is the
+    patch release version of scm
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="roadmap">
+  <div class="page-header">
+    <h1>Roadmap</h1>
+  </div>
+<ul>
+<li>
+Programming
+<ul>
+<li>
+Sequential
+</li>
+<li>
+Concurrent
+</li>
+<li>
+Open Telecom Platform (OTP)
+</li>
+</ul>
+</li>
+<li>
+Libraries, Tools, and Integration
+</li>
+<li>
+Applications
+</li>
+<li>
+Deployments
+</li>
+<li>
+Education and Training
+</li>
+</ul>
+</section>
+<section id="limitations">
+  <div class="page-header">
+    <h1>Limitations</h1>
+  </div>
+<ul>
+<li>
+The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
+  comments and have no effect on identifiers and character names read
+  from the same port.
+</li>
+<li>
+Inexact constants have double precision regardless of the specified
+  exponent marker.
+</li>
+<li>
+The following symbols are reserved and not allowed as a variable in
+  <code>set!</code> and <code>define</code> procedure calls:
+<ul>
+<li>
+<code>quote</code>
+</li>
+<li>
+<code>label</code>
+</li>
+<li>
+<code>labelref</code>
+</li>
+<li>
+<code>set!</code>
+</li>
+<li>
+<code>define</code>
+</li>
+<li>
+<code>if</code>
+</li>
+<li>
+<code>lambda</code>
+</li>
+<li>
+<code>include</code>
+</li>
+<li>
+<code>include-ci</code>
+</li>
+<li>
+<code>cond</code>
+</li>
+<li>
+<code>case</code>
+</li>
+<li>
+<code>and</code>
+</li>
+<li>
+<code>or</code>
+</li>
+<li>
+<code>when</code>
+</li>
+<li>
+<code>unless</code>
+</li>
+<li>
+<code>cond-expand</code>
+</li>
+<li>
+<code>let</code>
+</li>
+<li>
+<code>let*</code>
+</li>
+<li>
+<code>letrec</code>
+</li>
+<li>
+<code>letrec*</code>
+</li>
+<li>
+<code>begin</code>
+</li>
+<li>
+<code>do</code>
+</li>
+<li>
+<code>make-parameter</code>
+</li>
+<li>
+<code>parameterize</code>
+</li>
+<li>
+<code>guard</code>
+</li>
+<li>
+<code>quasiquotation</code>
+</li>
+<li>
+<code>unquote</code>
+</li>
+<li>
+<code>unquote-splicing</code>
+</li>
+</ul>
+</li>
+<li>
+The following <code>(scheme base)</code> library exports are not supported:
+<ul>
+<li>
+<code>set-car!</code>
+</li>
+<li>
+<code>set-cdr!</code>
+</li>
+<li>
+<code>list-set!</code>
+</li>
+</ul>
+</li>
+</ul>
+<section id="cscm_resources">
+  <div class="page-header">
+    <h1>CSCM Resources</h1>
+  </div>
+<p>An incomplete list of CSCM resources.</p>
+<ul>
+<li>
+website
+</li>
+<li>
+faq
+</li>
+<li>
+documentation
+<ul>
+<li>
+user&#8217;s guide
+</li>
+<li>
+contributor&#8217;s guide
+</li>
+<li>
+sample code and sample applications
+</li>
+</ul>
+</li>
+<li>
+community mailing list
+<ul>
+<li>
+announce
+</li>
+<li>
+questions
+</li>
+<li>
+bugs
+</li>
+<li>
+patches
+</li>
+</ul>
+</li>
+<li>
+contributor site
+<ul>
+<li>
+source code repositories
+</li>
+<li>
+issue tracker
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="scheme_resources">
+  <div class="page-header">
+    <h1>Scheme Resources</h1>
+  </div>
+<p>An incomplete list of Scheme resources.</p>
+<div class="ulist bibliography"><div class="title">Books</div><ul>
+<li>
+<p>
+<a id="SICP"></a>[SICP] Structure and Interpretation of Computer Programs.
+  <a href="http://mitpress.mit.edu/sicp/">http://mitpress.mit.edu/sicp/</a>
+</p>
+</li>
+</ul></div>
+<div class="ulist bibliography"><div class="title">Specifications</div><ul>
+<li>
+<p>
+<a id="RNRS"></a>[RNRS] Scheme Reports Process. <a href="http://www.scheme-reports.org">http://www.scheme-reports.org</a>
+</p>
+</li>
+<li>
+<p>
+<a id="R7RS"></a>[R7RS] R7RS <small>Draft</small>. <em>Revised 7th Report on the Algorithmic
+  Language
+  Scheme</em>. <a href="http://www.scheme-reports.org/2012/working-group-1.html">http://www.scheme-reports.org/2012/working-group-1.html</a>
+</p>
+</li>
+</ul></div>
+<div class="ulist bibliography"><div class="title">Websites</div><ul>
+<li>
+<p>
+<a id="SCMPEDIA"></a>[SCMPEDIA] Scheme (programming
+  language). <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)">http://en.wikipedia.org/wiki/Scheme_(programming_language)</a>
+</p>
+</li>
+<li>
+<p>
+<a id="MITSCM"></a>[MITSCM] Scheme. <em>MIT/GNU
+  Scheme</em>. <a href="http://groups.csail.mit.edu/mac/projects/scheme/index.html">http://groups.csail.mit.edu/mac/projects/scheme/index.html</a>
+</p>
+</li>
+<li>
+<p>
+<a id="SCMORG"></a>[SCMORG] '(schemers . org): an improper list of Scheme
+  resources. <a href="http://www.schemers.org">http://www.schemers.org</a>
+</p>
+</li>
+<li>
+<p>
+<a id="SCMWIKI"></a>[SCMWIKI]
+  Commmunity-Scheme-Wiki. <a href="http://community.schemewiki.org">http://community.schemewiki.org</a>
+</p>
+</li>
+</ul></div>
+</section>
+<section id="erlang_resources">
+  <div class="page-header">
+    <h1>Erlang Resources</h1>
+  </div>
+<p>An incomplete list of Erlang resources.</p>
+<div class="ulist bibliography"><div class="title">Books</div><ul>
+<li>
+<p>
+<a id="JAERLANG"></a>[JAERLANG] Programming Erlang: Software for a Concurrent World.
+  <a href="http://pragprog.com/book/jaerlang/programming-erlang">http://pragprog.com/book/jaerlang/programming-erlang</a>
+</p>
+</li>
+<li>
+<p>
+<a id="LYSE"></a>[LYSE] Learn You Some Erlang for great good! <a href="http://learnyousomeerlang.com">http://learnyousomeerlang.com</a>
+</p>
+</li>
+</ul></div>
+<div class="ulist bibliography"><div class="title">Websites</div><ul>
+<li>
+<p>
+<a id="ERLPEDIA"></a>[ERLPEDIA] Erlang (programming
+  language). <a href="http://en.wikipedia.org/wiki/Erlang_(programming_language)">http://en.wikipedia.org/wiki/Erlang_(programming_language)</a>
+</p>
+</li>
+<li>
+<p>
+<a id="ERLANG"></a>[ERLANG] ERLANG programming language. <a href="http://www.erlang.org">http://www.erlang.org</a>
+</p>
+</li>
+<li>
+<p>
+<a id="EUC"></a>[EUC] Erlang User Conference. <a href="http://www.erlang.org/euc">http://www.erlang.org/euc</a>
+</p>
+</li>
+<li>
+<p>
+<a id="EFACTORY"></a>[EFACTORY] Erlang Factory. <a href="http://erlang-factory.com/">http://erlang-factory.com/</a>
+</p>
+</li>
+<li>
+<p>
+<a id="ACMERLANG"></a>[ACMERLANG] ACM SIGPLAN Erlang
+  Workshops. <a href="http://www.erlang.org/workshop">http://www.erlang.org/workshop</a>
+</p>
+</li>
+</ul></div>
+</section>
+<section id="related_resources">
+  <div class="page-header">
+    <h1>Related Resources</h1>
+  </div>
+<p>An incomplete list of related resources.</p>
+<ul>
+<li>
+<a id="ELIXIR"></a>[ELIXIR] elixir. <a href="http://elixir-lang.org">http://elixir-lang.org</a>
+</li>
+<li>
+<a id="LFE"></a>[LFE] Lisp Flavored Erlang. <a href="http://lfe.github.com">http://lfe.github.com</a>
+</li>
+<li>
+<a id="TERMITE"></a>[TERMITE] Termite Scheme. <a href="http://code.google.com/p/termite/">http://code.google.com/p/termite/</a>
+</li>
+</ul>
+</section>
+</section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </div>
+    </footer>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="./bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="./bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="./bootstrap/docs/assets/js/bootstrap.min.js"></script>
+    <script src="./bootstrap/docs/assets/js/application.js"></script>
+    <script src="./asciidoc.js"></script>
+    <script>asciidoc.install(1);</script>
+  </body>
+</html>
