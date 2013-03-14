@@ -146,32 +146,213 @@ Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
   <div class="page-header">
     <h1>Roadmap</h1>
   </div>
+<p>This roadmap is a <strong>DRAFT</strong>.</p>
 <ul>
 <li>
 Programming
 <ul>
 <li>
-Sequential
+<strong>v0.5.0</strong> Sequential "base"
+<ul>
+<li>
+primitive expressions - quote, lambda, if, set!, include,
+       include-ci
 </li>
 <li>
-Concurrent
+derived expressions - cond, case, and, or, when, unless,
+       cond-expand, let, let*, letrec, letrec*, let*-values,
+       let*-values, begin, do, make-parameter, parameterize, guard
 </li>
 <li>
-Open Telecom Platform (OTP)
+programs - define, define-values
+</li>
+<li>
+libraries - base, r5rs
+</li>
+<li>
+tools - scm shell
 </li>
 </ul>
 </li>
 <li>
-Libraries, Tools, and Integration
+<strong>v0.6.0</strong> Sequential "libraries"
+<ul>
+<li>
+programs - import, define-library
 </li>
 <li>
-Applications
+libraries - case-lambda, char, complex, cxr, eval, file,
+       inexact, lazy, load, process-context, read, repl, jiffy, write
+</li>
+</ul>
 </li>
 <li>
-Deployments
+<strong>v0.7.0</strong> Sequential "syntax"
+<ul>
+<li>
+derived expressions - quasiquote, unquote, unquote-splicing
+</li>
+<li>
+syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
+</li>
+<li>
+programs - define-syntax, define-record-type
+</li>
+</ul>
+</li>
+<li>
+<strong>v0.8.0</strong> Sequential "features"
+<ul>
+<li>
+extensions - Erlang-style pattern matching, records, and binary
+       support
+</li>
+<li>
+integration - Erlang native functions, nif functions, and code
+       loading
+</li>
+<li>
+tools - scmc compiler
+</li>
+</ul>
+</li>
+<li>
+<strong>v0.9.0</strong> Sequential "maintenance"
+<ul>
+<li>
+bug fixes
+</li>
+<li>
+refactoring
+</li>
+<li>
+performance tuning
+</li>
+<li>
+documentation
+</li>
+</ul>
+</li>
+<li>
+<strong>v1.0.0</strong> Concurrent "processes"
+<ul>
+<li>
+extensions - Erlang processes and error handling
+</li>
+</ul>
+</li>
+<li>
+<strong>v1.1.0</strong> Concurrent "distributed"
+<ul>
+<li>
+extensions - Erlang distribution and error handling
+</li>
+</ul>
+</li>
+<li>
+<strong>v1.2.0</strong> Concurrent "ports and drivers"
+<ul>
+<li>
+extensions - Erlang ports, drivers, and error handling
+</li>
+</ul>
+</li>
+<li>
+<strong>v1.3.0</strong> Concurrent "maintenance"
+<ul>
+<li>
+bug fixes
+</li>
+<li>
+refactoring
+</li>
+<li>
+performance tuning
+</li>
+<li>
+documentation
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+Open Telecom Platform (OTP)
+<ul>
+<li>
+<strong>v1.5.0</strong> OTP "applications"
+<ul>
+<li>
+behaviors - gen_server, gen_fsm, gen_event, supervisor
+</li>
+<li>
+logging - system
+</li>
+<li>
+applications
+</li>
+<li>
+included applications
+</li>
+<li>
+distributed applications
+</li>
+</ul>
+</li>
+<li>
+<strong>v1.6.0</strong> OTP "releases"
+<ul>
+<li>
+releases
+</li>
+<li>
+release handling
+</li>
+<li>
+release distribution
+</li>
+<li>
+release deployment
+</li>
+</ul>
+</li>
+<li>
+<strong>v1.7.0</strong> OTP "maintenance"
+<ul>
+<li>
+bug fixes
+</li>
+<li>
+refactoring
+</li>
+<li>
+performance tuning
+</li>
+<li>
+documentation
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+Tools
+<ul>
+<li>
+<strong>v2.0.0</strong> Tools
+</li>
+<li>
+&#8230;
+</li>
+</ul>
 </li>
 <li>
 Education and Training
+<ul>
+<li>
+&#8230;
+</li>
+</ul>
 </li>
 </ul>
 </section>
@@ -190,98 +371,126 @@ Inexact constants have double precision regardless of the specified
   exponent marker.
 </li>
 <li>
-The following symbols are reserved and not allowed as a variable in
-  <code>set!</code> and <code>define</code> procedure calls:
+The following symbols as specified in <a href="#R7RS">[R7RS]</a> are reserved and not
+  allowed as the variable in <code>set!</code>, <code>define</code>, <code>define-values</code>,
+  <code>define-syntax</code>, <code>define-record-type</code>, and <code>define-library</code>
+  procedure calls. The <code>delay</code>, <code>delay-force</code>, <code>force</code>, <code>promise?</code>,
+  and <code>make-promise</code> symbols of <small>section 4.2.5</small> are implemented as
+  <code>(scheme lazy)</code> library exports and thus are not reserved symbols.
+  The <code>case-lambda</code> symbol of <small>section 4.2.9</small> is implemented as a
+  <code>(scheme case-lambda)</code> library export and thus is not a reserved
+  symbol.
 <ul>
 <li>
-<code>quote</code>
+<code>quote</code> <small>section 4.1.2</small>
 </li>
 <li>
-<code>label</code>
+<code>lambda</code> <small>section 4.1.4</small>
 </li>
 <li>
-<code>labelref</code>
+<code>if</code> <small>section 4.1.5</small>
 </li>
 <li>
-<code>set!</code>
+<code>set!</code> <small>section 4.1.6</small>
 </li>
 <li>
-<code>define</code>
+<code>include</code> <small>section 4.1.7</small>
 </li>
 <li>
-<code>if</code>
+<code>include-ci</code> <small>section 4.1.7</small>
 </li>
 <li>
-<code>lambda</code>
+<code>cond</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>include</code>
+<code>case</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>include-ci</code>
+<code>and</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>cond</code>
+<code>or</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>case</code>
+<code>when</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>and</code>
+<code>unless</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>or</code>
+<code>cond-expand</code> <small>section 4.2.1</small>
 </li>
 <li>
-<code>when</code>
+<code>let</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>unless</code>
+<code>let*</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>cond-expand</code>
+<code>letrec</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>let</code>
+<code>letrec*</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>let*</code>
+<code>let-values</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>letrec</code>
+<code>let*-values</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>letrec*</code>
+<code>begin</code> <small>section 4.2.3</small>
 </li>
 <li>
-<code>let-values</code>
+<code>do</code> <small>section 4.2.4</small>
 </li>
 <li>
-<code>let*-values</code>
+<code>make-parameter</code> <small>section 4.2.6</small>
 </li>
 <li>
-<code>begin</code>
+<code>parameterize</code> <small>section 4.2.6</small>
 </li>
 <li>
-<code>do</code>
+<code>guard</code> <small>section 4.2.7</small>
 </li>
 <li>
-<code>make-parameter</code>
+<code>quasiquote</code> <small>section 4.2.8</small>
 </li>
 <li>
-<code>parameterize</code>
+<code>unquote</code> <small>section 4.2.8</small>
 </li>
 <li>
-<code>guard</code>
+<code>unquote-splicing</code> <small>section 4.2.8</small>
 </li>
 <li>
-<code>quasiquotation</code>
+<code>let-syntax</code> <small>section 4.3.1</small>
 </li>
 <li>
-<code>unquote</code>
+<code>letrec-syntax</code> <small>section 4.3.1</small>
 </li>
 <li>
-<code>unquote-splicing</code>
+<code>syntax-rules</code> <small>section 4.3.2</small>
+</li>
+<li>
+<code>syntax-error</code> <small>section 4.3.2</small>
+</li>
+<li>
+<code>import</code> <small>section 5.2</small>
+</li>
+<li>
+<code>define</code> <small>section 5.3.1 and 5.3.2</small>
+</li>
+<li>
+<code>define-values</code> <small>section 5.3.3</small>
+</li>
+<li>
+<code>define-syntax</code> <small>section 5.4</small>
+</li>
+<li>
+<code>define-record-type</code> <small>section 5.5</small>
+</li>
+<li>
+<code>define-library</code> <small>section 5.6</small>
 </li>
 </ul>
 </li>
