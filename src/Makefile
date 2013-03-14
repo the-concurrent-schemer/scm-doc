@@ -11,7 +11,8 @@ clean:
 	rm -f $(HTML) $(PDF)
 
 %.html: %.asciidoc Makefile
-	cd $(<D) && asciidoc -b bootstrap-docs -a data-uri -a icons -a toc2 $(<F)
+	cd $(<D) && asciidoc $(<F)
+	@perl -i -pe 's~class="brand" href="#"~class="brand" href="https://github.com/the-concurrent-schemer"~;' index.html
 
 %.pdf: %.asciidoc Makefile
 	cd $(<D) && a2x -f pdf $(<F)

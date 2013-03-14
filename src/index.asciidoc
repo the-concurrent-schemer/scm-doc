@@ -4,11 +4,17 @@
 = The Concurrent Schemer
 Joseph Wayne Norton <norton@alum.mit.edu>
 :Author Initials: JWN
+:title: The Concurrent Schemer
+:description: The Erlang VM supports the Scheme programming language.
+:footer: Functional programming for the better good!
+:brand: CSCM
+:brandref: https://github.com/the-concurrent-schemer
+:doctype: article
 :toc2:
-:icons:
-:website: http://the-concurrent-schemer.github.com/scm-doc/
+:data-uri:
 :backend: bootstrap-docs
 :link-assets:
+:glyphicons: http://glyphicons.com[Glyphicons]
 
 == Overview
 
