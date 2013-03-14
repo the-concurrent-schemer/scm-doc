@@ -68,14 +68,83 @@ for more information later._
 
 == Roadmap
 
+This roadmap is a *DRAFT*.
+
 - Programming
-  * Sequential
-  * Concurrent
-  * Open Telecom Platform (OTP)
-- Libraries, Tools, and Integration
-- Applications
-- Deployments
+  * *v0.5.0* Sequential "base"
+    ** primitive expressions - quote, lambda, if, set!, include,
+       include-ci
+    ** derived expressions - cond, case, and, or, when, unless,
+       cond-expand, let, let*, letrec, letrec*, let*-values,
+       let*-values, begin, do, make-parameter, parameterize, guard
+    ** programs - define, define-values
+    ** libraries - base, r5rs
+    ** tools - scm shell
+
+  * *v0.6.0* Sequential "libraries"
+    ** programs - import, define-library
+    ** libraries - case-lambda, char, complex, cxr, eval, file,
+       inexact, lazy, load, process-context, read, repl, jiffy, write
+
+  * *v0.7.0* Sequential "syntax"
+    ** derived expressions - quasiquote, unquote, unquote-splicing
+    ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
+    ** programs - define-syntax, define-record-type
+
+  * *v0.8.0* Sequential "features"
+    ** extensions - Erlang-style pattern matching, records, and binary
+       support
+    ** integration - Erlang native functions, nif functions, and code
+       loading
+    ** tools - scmc compiler
+
+  * *v0.9.0* Sequential "maintenance"
+    ** bug fixes
+    ** refactoring
+    ** performance tuning
+    ** documentation
+
+  * *v1.0.0* Concurrent "processes"
+    ** extensions - Erlang processes and error handling
+
+  * *v1.1.0* Concurrent "distributed"
+    ** extensions - Erlang distribution and error handling
+
+  * *v1.2.0* Concurrent "ports and drivers"
+    ** extensions - Erlang ports, drivers, and error handling
+
+  * *v1.3.0* Concurrent "maintenance"
+    ** bug fixes
+    ** refactoring
+    ** performance tuning
+    ** documentation
+
+- Open Telecom Platform (OTP)
+  * *v1.5.0* OTP "applications"
+    ** behaviors - gen_server, gen_fsm, gen_event, supervisor
+    ** logging - system
+    ** applications
+    ** included applications
+    ** distributed applications
+
+  * *v1.6.0* OTP "releases"
+    ** releases
+    ** release handling
+    ** release distribution
+    ** release deployment
+
+  * *v1.7.0* OTP "maintenance"
+    ** bug fixes
+    ** refactoring
+    ** performance tuning
+    ** documentation
+
+- Tools
+  * *v2.0.0* Tools
+  * ...
+
 - Education and Training
+  * ...
 
 == Limitations
 
@@ -86,39 +155,53 @@ for more information later._
 - Inexact constants have double precision regardless of the specified
   exponent marker.
 
-- The following symbols are reserved and not allowed as a variable in
-  +set!+ and +define+ procedure calls:
+- The following symbols as specified in <<R7RS>> are reserved and not
+  allowed as the variable in +set!+, +define+, +define-values+,
+  +define-syntax+, +define-record-type+, and +define-library+
+  procedure calls. The +delay+, +delay-force+, +force+, +promise?+,
+  and +make-promise+ symbols of _section 4.2.5_ are implemented as
+  +(scheme lazy)+ library exports and thus are not reserved symbols.
+  The +case-lambda+ symbol of _section 4.2.9_ is implemented as a
+  +(scheme case-lambda)+ library export and thus is not a reserved
+  symbol.
 
-  * +quote+
-  * +label+
-  * +labelref+
-  * +set!+
-  * +define+
-  * +if+
-  * +lambda+
-  * +include+
-  * +include-ci+
-  * +cond+
-  * +case+
-  * +and+
-  * +or+
-  * +when+
-  * +unless+
-  * +cond-expand+
-  * +let+
-  * +let*+
-  * +letrec+
-  * +letrec*+
-  * +let-values+
-  * +let*-values+
-  * +begin+
-  * +do+
-  * +make-parameter+
-  * +parameterize+
-  * +guard+
-  * +quasiquotation+
-  * +unquote+
-  * +unquote-splicing+
+  * +quote+ _section 4.1.2_
+  * +lambda+ _section 4.1.4_
+  * +if+ _section 4.1.5_
+  * +set!+ _section 4.1.6_
+  * +include+ _section 4.1.7_
+  * +include-ci+ _section 4.1.7_
+  * +cond+ _section 4.2.1_
+  * +case+ _section 4.2.1_
+  * +and+ _section 4.2.1_
+  * +or+ _section 4.2.1_
+  * +when+ _section 4.2.1_
+  * +unless+ _section 4.2.1_
+  * +cond-expand+ _section 4.2.1_
+  * +let+ _section 4.2.2_
+  * +let*+ _section 4.2.2_
+  * +letrec+ _section 4.2.2_
+  * +letrec*+ _section 4.2.2_
+  * +let-values+ _section 4.2.2_
+  * +let*-values+ _section 4.2.2_
+  * +begin+ _section 4.2.3_
+  * +do+ _section 4.2.4_
+  * +make-parameter+ _section 4.2.6_
+  * +parameterize+ _section 4.2.6_
+  * +guard+ _section 4.2.7_
+  * +quasiquote+ _section 4.2.8_
+  * +unquote+ _section 4.2.8_
+  * +unquote-splicing+ _section 4.2.8_
+  * +let-syntax+ _section 4.3.1_
+  * +letrec-syntax+ _section 4.3.1_
+  * +syntax-rules+ _section 4.3.2_
+  * +syntax-error+ _section 4.3.2_
+  * +import+ _section 5.2_
+  * +define+ _section 5.3.1 and 5.3.2_
+  * +define-values+ _section 5.3.3_
+  * +define-syntax+ _section 5.4_
+  * +define-record-type+ _section 5.5_
+  * +define-library+ _section 5.6_
 
 - The following +(scheme base)+ library exports are not supported:
   * +set-car!+
