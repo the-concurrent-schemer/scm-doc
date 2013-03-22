@@ -164,7 +164,8 @@ primitive expressions - quote, lambda, if, set!, include,
 <li>
 derived expressions - cond, case, and, or, when, unless,
        cond-expand, let, let*, letrec, letrec*, let*-values,
-       let*-values, begin, do, make-parameter, parameterize, guard
+       let*-values, letrec-values, letrec*-values, begin, do,
+       make-parameter, parameterize, guard
 </li>
 <li>
 programs - define, define-values
@@ -359,6 +360,25 @@ Education and Training
 </li>
 </ul>
 </section>
+<section id="enhancements">
+  <div class="page-header">
+    <h1>Enhancements</h1>
+  </div>
+<ul>
+<li>
+The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification are
+  supported:
+<ul>
+<li>
+<code>letrec-values</code> <small>derived expression binding construct</small>
+</li>
+<li>
+<code>letrec*-values</code> <small>derived expression binding construct</small>
+</li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="limitations">
   <div class="page-header">
     <h1>Limitations</h1>
@@ -442,6 +462,12 @@ The following symbols as specified in <a href="#R7RS">[R7RS]</a> are reserved an
 <code>let*-values</code> <small>section 4.2.2</small>
 </li>
 <li>
+<code>letrec-values</code> <small>enhancement</small>
+</li>
+<li>
+<code>letrec*-values</code> <small>enhancement</small>
+</li>
+<li>
 <code>begin</code> <small>section 4.2.3</small>
 </li>
 <li>
@@ -501,13 +527,40 @@ The following symbols as specified in <a href="#R7RS">[R7RS]</a> are reserved an
 The following <code>(scheme base)</code> library exports are not supported:
 <ul>
 <li>
+<code>bytevector-copy!</code>
+</li>
+<li>
+<code>bytevector-u8-set!</code>
+</li>
+<li>
+<code>list-set!</code>
+</li>
+<li>
+<code>read-bytevector!</code>
+</li>
+<li>
 <code>set-car!</code>
 </li>
 <li>
 <code>set-cdr!</code>
 </li>
 <li>
-<code>list-set!</code>
+<code>string-copy!</code>
+</li>
+<li>
+<code>string-fill!</code>
+</li>
+<li>
+<code>string-set!</code>
+</li>
+<li>
+<code>vector-copy!</code>
+</li>
+<li>
+<code>vector-fill!</code>
+</li>
+<li>
+<code>vector-set!</code>
 </li>
 </ul>
 </li>
