@@ -7,6 +7,11 @@ html: $(HTML)
 
 pdf: $(PDF)
 
+gh-pages: clean html
+	git co gh-pages
+	rsync -avz ./index.html ../index.html
+	rsync -avz --exclude=.git --delete ./bootstrap-docs/bootstrap/ ../bootstrap/
+
 clean:
 	rm -f $(HTML) $(PDF)
 
