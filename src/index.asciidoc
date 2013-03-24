@@ -82,7 +82,7 @@ This roadmap is a *DRAFT*.
        include-ci
     ** derived expressions - cond, case, and, or, when, unless,
        cond-expand, let, let*, letrec, letrec*, let*-values,
-       let*-values, letrec*-values, begin, do, make-parameter,
+       let*-values, letrec-values, begin, do, make-parameter,
        parameterize, guard
     ** programs - define, define-values
     ** libraries - base, r5rs
@@ -158,7 +158,7 @@ This roadmap is a *DRAFT*.
 - The following enhancements beyond the <<R7RS>> specification are
   supported:
 
-  * +letrec*-values+ _derived expression binding construct_
+  * +letrec-values+ _derived expression binding construct_
 
 == Limitations
 
@@ -198,7 +198,7 @@ This roadmap is a *DRAFT*.
   * +letrec*+ _section 4.2.2_
   * +let-values+ _section 4.2.2_
   * +let*-values+ _section 4.2.2_
-  * +letrec*-values+ _enhancement_
+  * +letrec-values+ _enhancement_
   * +begin+ _section 4.2.3_
   * +do+ _section 4.2.4_
   * +make-parameter+ _section 4.2.6_
