@@ -77,24 +77,33 @@ for more information later._
 This roadmap is a *DRAFT*.
 
 - Programming
-  * *v0.4.0* Sequential "base"
+  * *v0.2.0* Sequential "primitive expressions"
     ** primitive expressions - quote, lambda, if, set!, include,
        include-ci
+    ** programs - define
+
+  * *v0.3.0* Sequential "derived expressions"
     ** derived expressions - cond, case, and, or, when, unless,
        cond-expand, let, let*, letrec, letrec*, let*-values,
        let*-values, letrec-values, begin, do, make-parameter,
        parameterize, guard
-    ** programs - define, define-values
-    ** libraries - base without number
-    ** tools - scm shell
+    ** programs - define-values
 
-  * *v0.5.0* Sequential "numbers"
-    ** libraries - base number, complex, inexact
+  * *v0.4.0* Sequential "base library"
+    ** libraries - base without number (148 procedures)
+
+  * *v0.5.0* Sequential "base number library"
+    ** libraries - base number (52 procedures), complex (6
+       procedures), inexact (13 procedures)
 
   * *v0.6.0* Sequential "libraries"
     ** programs - import, define-library
-    ** libraries - case-lambda, char, cxr, eval, file, lazy, load,
-       process-context, read, repl, jiffy, write, r5rs
+    ** libraries - case-lambda (1 procedure), char (22 procedures),
+       cxr (25 procedures), eval (2 procedures), file (2 procedures),
+       lazy (5 procedures), load (2 procedures), process-context (7
+       procedures), read (2 procedures), repl (1 procedure), time (3
+       procedures), write (8 procedures), r5rs
+    ** tools - scm shell
 
   * *v0.7.0* Sequential "syntax"
     ** derived expressions - quasiquote, unquote, unquote-splicing
