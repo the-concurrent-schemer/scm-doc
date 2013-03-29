@@ -155,12 +155,20 @@ Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
 Programming
 <ul>
 <li>
-<strong>v0.4.0</strong> Sequential "base"
+<strong>v0.2.0</strong> Sequential "primitive expressions"
 <ul>
 <li>
 primitive expressions - quote, lambda, if, set!, include,
        include-ci
 </li>
+<li>
+programs - define
+</li>
+</ul>
+</li>
+<li>
+<strong>v0.3.0</strong> Sequential "derived expressions"
+<ul>
 <li>
 derived expressions - cond, case, and, or, when, unless,
        cond-expand, let, let*, letrec, letrec*, let*-values,
@@ -168,21 +176,24 @@ derived expressions - cond, case, and, or, when, unless,
        parameterize, guard
 </li>
 <li>
-programs - define, define-values
-</li>
-<li>
-libraries - base without number
-</li>
-<li>
-tools - scm shell
+programs - define-values
 </li>
 </ul>
 </li>
 <li>
-<strong>v0.5.0</strong> Sequential "numbers"
+<strong>v0.4.0</strong> Sequential "base library"
 <ul>
 <li>
-libraries - base number, complex, inexact
+libraries - base without number (148 procedures)
+</li>
+</ul>
+</li>
+<li>
+<strong>v0.5.0</strong> Sequential "base number library"
+<ul>
+<li>
+libraries - base number (52 procedures), complex (6
+       procedures), inexact (13 procedures)
 </li>
 </ul>
 </li>
@@ -193,8 +204,14 @@ libraries - base number, complex, inexact
 programs - import, define-library
 </li>
 <li>
-libraries - case-lambda, char, cxr, eval, file, lazy, load,
-       process-context, read, repl, jiffy, write, r5rs
+libraries - case-lambda (1 procedure), char (22 procedures),
+       cxr (25 procedures), eval (2 procedures), file (2 procedures),
+       lazy (5 procedures), load (2 procedures), process-context (7
+       procedures), read (2 procedures), repl (1 procedure), time (3
+       procedures), write (8 procedures), r5rs
+</li>
+<li>
+tools - scm shell
 </li>
 </ul>
 </li>
