@@ -77,6 +77,11 @@ for more information later._
 This roadmap is a *DRAFT*.
 
 - Programming
+  * *v0.1.0* Sequential "datum"
+    ** datum model
+    ** datum tokenizer and parser
+    ** environment primitives
+
   * *v0.2.0* Sequential "primitive expressions"
     ** primitive expressions - quote, lambda, if, set!, include,
        include-ci
