@@ -1,0 +1,131 @@
+// -*- Doc -*-
+// vim: set syntax=asciidoc:
+
+// Joseph Wayne Norton
+// norton@alum.mit.edu
+// josephwnorton
+// http://www.gravatar.com/avatar/21dcd8061464aae455000cba61143c96?s=200
+// https://github.com/norton
+// Tokyo, Japan
+//
+// Joe Norton is a technical manager, system architect, developer, and
+// Erlang/Scheme enthusiast.  Based out of Tokyo, Japan, he has designed,
+// developed, tested, deployed, and supported carrier grade
+// Erlang/OTP-based messaging and storage systems.
+//
+//
+// The Concurrent Schemer - Hands-On
+//
+// "The Concurrent Schemer" (CSCM) is an implementation of the Scheme
+// programming language built on top of the Erlang Virtual Machine.  CSCM
+// combines the sequential programming model of Scheme with the
+// concurrent, distributed, and fault-tolerant programming model of
+// Erlang.  The default language is Scheme R7RS.  The default virtual
+// machine is Erlang/OTP R16B or higher.
+//
+// The goal of this workshop is to provide a concurrent introduction to
+// Scheme and Erlang.  An overview of Scheme will be presented based on
+// the latest draft of the "Revised 7 Report on the Algorithmic Language
+// Scheme" (R7RS) specification.  An overview of Erlang will be
+// simultaneously presented based on the latest CSCM implementation built
+// using the Erlang Virtual Machine.
+//
+// Since CSCM is a work in progress, the workshop materials and
+// presentation will be of alpha quality.
+//
+// Please see http://the-concurrent-schemer.github.com/scm-doc/ for
+// further information.
+//
+//
+// About myself, I have 20+ years of professional software experience and
+// 10 years of system and software architecture experience.  I have 5+
+// years of hands-on Erlang/OTP experience. I have designed, developed,
+// tested, deployed, and supported carrier grade Erlang/OTP (starting
+// from R11B-5) messaging and storage systems.  I often attend and
+// sometimes present at Erlang/Functional programming conferences.  My
+// open-source projects and applications can be viewed on GitHub
+// (https://github.com/norton).
+
+= The Concurrent Schemer Hands-On
+Joseph Wayne Norton <norton@alum.mit.edu>
+:Author Initials: JWN
+:title: The Concurrent Schemer Hands-On
+:description: The Erlang VM supports the Scheme programming language.
+:footer: Functional programming for the better good!
+:brand: CSCM
+:brandref: https://github.com/the-concurrent-schemer
+:doctype: article
+:toc2:
+:data-uri:
+:backend: bootstrap-docs
+:link-assets:
+:glyphicons: http://glyphicons.com[Glyphicons]
+
+== Overview
+
+- CSCM
+  * *v0.1.0* Sequential "datum"
+    ** datum model
+    ** datum tokenizer and parser
+    ** environment primitives
+
+  * *v0.2.0* Sequential "primitive expressions"
+    ** primitive expressions - quote, lambda, if, set!, include,
+       include-ci
+    ** programs - define
+
+  * *v0.3.0* Sequential "derived expressions"
+    ** derived expressions - cond, case, and, or, when, unless,
+       cond-expand, let, let*, letrec, letrec*, let*-values,
+       let*-values, letrec-values, begin, do, make-parameter,
+       parameterize, guard
+    ** programs - define-values
+
+  * *v0.4.0* Sequential "base library"
+    ** libraries - base without number (148 procedures)
+
+  * *v0.5.0* Sequential "base number library"
+    ** libraries - base number (52 procedures), complex (6
+       procedures), inexact (13 procedures)
+
+  * *v0.6.0* Sequential "libraries"
+    ** programs - import, define-library
+    ** libraries - case-lambda (1 procedure), char (22 procedures),
+       cxr (25 procedures), eval (2 procedures), file (2 procedures),
+       lazy (5 procedures), load (2 procedures), process-context (7
+       procedures), read (2 procedures), repl (1 procedure), time (3
+       procedures), write (8 procedures), r5rs
+    ** tools - scm shell
+
+  * *v0.7.0* Sequential "syntax"
+    ** derived expressions - quasiquote, unquote, unquote-splicing
+    ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
+    ** programs - define-syntax, define-record-type
+
+  * *v0.8.0* Sequential "features"
+    ** extensions - Erlang-style pattern matching, records, and binary
+       support
+    ** integration - Erlang native functions, nif functions, and code
+       loading
+    ** tools - scmc compiler
+
+  * *v0.9.0* Sequential "maintenance"
+    ** bug fixes
+    ** refactoring
+    ** performance tuning
+    ** documentation
+
+  * *v1.0.0* Concurrent "processes"
+    ** extensions - Erlang processes and error handling
+
+  * *v1.1.0* Concurrent "distributed"
+    ** extensions - Erlang distribution and error handling
+
+  * *v1.2.0* Concurrent "ports and drivers"
+    ** extensions - Erlang ports, drivers, and error handling
+
+  * *v1.3.0* Concurrent "maintenance"
+    ** bug fixes
+    ** refactoring
+    ** performance tuning
+    ** documentation
