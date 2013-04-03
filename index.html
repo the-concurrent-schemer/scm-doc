@@ -74,8 +74,8 @@ Computer Science Laborary and is maintained as an open-source project
 and community.</p>
 <p>The default language is Scheme R7RS.  The default virtual machine is
 Erlang/OTP R16B or higher.</p>
-<p><span class="label label-caution">Caution</span> <small>This documentation is under construction.  Please stay tuned
-for more information later.</small></p>
+<p><span class="label label-caution">Caution</span> <small>Please stay tuned for updates.  This documentation is under
+construction.</small></p>
 </section>
 <section id="features">
   <div class="page-header">
@@ -157,7 +157,7 @@ Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
 Programming
 <ul>
 <li>
-<strong>v0.1.0</strong> Sequential "datum"
+v0.1.0 Sequential "datum" <small>DONE</small>
 <ul>
 <li>
 datum model
@@ -174,8 +174,7 @@ environment primitives
 <strong>v0.2.0</strong> Sequential "primitive expressions"
 <ul>
 <li>
-primitive expressions - quote, lambda, if, set!, include,
-       include-ci
+primitive expressions - quote, lambda, if, set!, include
 </li>
 <li>
 programs - define
@@ -423,24 +422,14 @@ The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification a
   </div>
 <ul>
 <li>
-The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
-  comments and have no effect on identifiers and character names read
-  from the same port.
-</li>
-<li>
-Inexact constants have double precision regardless of the specified
-  exponent marker.
-</li>
-<li>
-The following symbols as specified in <a href="#R7RS">[R7RS]</a> are reserved and not
-  allowed as the variable in <code>set!</code>, <code>define</code>, <code>define-values</code>,
-  <code>define-syntax</code>, <code>define-record-type</code>, and <code>define-library</code>
-  procedure calls. The <code>delay</code>, <code>delay-force</code>, <code>force</code>, <code>promise?</code>,
-  and <code>make-promise</code> symbols of <small>section 4.2.5</small> are implemented as
-  <code>(scheme lazy)</code> library exports and thus are not reserved symbols.
-  The <code>case-lambda</code> symbol of <small>section 4.2.9</small> is implemented as a
-  <code>(scheme case-lambda)</code> library export and thus is not a reserved
-  symbol.
+The following symbols are reserved and not allowed as the variable
+  in <code>set!</code>, <code>define</code>, <code>define-values</code>, <code>define-syntax</code>,
+  <code>define-record-type</code>, and <code>define-library</code> procedure calls. The
+  <code>delay</code>, <code>delay-force</code>, <code>force</code>, <code>promise?</code>, and <code>make-promise</code>
+  symbols of <small>section 4.2.5</small> are implemented as <code>(scheme lazy)</code>
+  library exports and thus are not reserved symbols.  The
+  <code>case-lambda</code> symbol of <small>section 4.2.9</small> is implemented as a <code>(scheme
+  case-lambda)</code> library export and thus is not a reserved symbol.
 <ul>
 <li>
 <code>quote</code> <small>section 4.1.2</small>
@@ -559,7 +548,15 @@ The following symbols as specified in <a href="#R7RS">[R7RS]</a> are reserved an
 </ul>
 </li>
 <li>
-The following <code>(scheme base)</code> library exports are not supported:
+Unsupported primitive expressions:
+<ul>
+<li>
+<code>include-ci</code>
+</li>
+</ul>
+</li>
+<li>
+Unsupported <code>(scheme base)</code> library exports:
 <ul>
 <li>
 <code>bytevector-copy!</code>
@@ -596,6 +593,20 @@ The following <code>(scheme base)</code> library exports are not supported:
 </li>
 <li>
 <code>vector-set!</code>
+</li>
+</ul>
+</li>
+<li>
+Miscellaneous
+<ul>
+<li>
+The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
+    comments and have no effect on identifiers and character names
+    read from the same port.
+</li>
+<li>
+Inexact constants have double precision regardless of the
+    specified exponent marker.
 </li>
 </ul>
 </li>
