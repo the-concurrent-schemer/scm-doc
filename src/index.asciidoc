@@ -43,8 +43,8 @@ and community.
 The default language is Scheme R7RS.  The default virtual machine is
 Erlang/OTP R16B or higher.
 
-CAUTION: _This documentation is under construction.  Please stay tuned
-for more information later._
+CAUTION: _Please stay tuned for updates.  This documentation is under
+construction._
 
 == Features
 
@@ -80,14 +80,13 @@ for more information later._
 This roadmap is a *DRAFT*.
 
 - Programming
-  * *v0.1.0* Sequential "datum"
+  * v0.1.0 Sequential "datum" _DONE_
     ** datum model
     ** datum tokenizer and parser
     ** environment primitives
 
   * *v0.2.0* Sequential "primitive expressions"
-    ** primitive expressions - quote, lambda, if, set!, include,
-       include-ci
+    ** primitive expressions - quote, lambda, if, set!, include
     ** programs - define
 
   * *v0.3.0* Sequential "derived expressions"
@@ -182,22 +181,14 @@ This roadmap is a *DRAFT*.
 
 == Limitations
 
-- The +#!fold-case+ and +#!no-fold-case+ directives are treated as
-  comments and have no effect on identifiers and character names read
-  from the same port.
-
-- Inexact constants have double precision regardless of the specified
-  exponent marker.
-
-- The following symbols as specified in <<R7RS>> are reserved and not
-  allowed as the variable in +set!+, +define+, +define-values+,
-  +define-syntax+, +define-record-type+, and +define-library+
-  procedure calls. The +delay+, +delay-force+, +force+, +promise?+,
-  and +make-promise+ symbols of _section 4.2.5_ are implemented as
-  +(scheme lazy)+ library exports and thus are not reserved symbols.
-  The +case-lambda+ symbol of _section 4.2.9_ is implemented as a
-  +(scheme case-lambda)+ library export and thus is not a reserved
-  symbol.
+- The following symbols are reserved and not allowed as the variable
+  in +set!+, +define+, +define-values+, +define-syntax+,
+  +define-record-type+, and +define-library+ procedure calls. The
+  +delay+, +delay-force+, +force+, +promise?+, and +make-promise+
+  symbols of _section 4.2.5_ are implemented as +(scheme lazy)+
+  library exports and thus are not reserved symbols.  The
+  +case-lambda+ symbol of _section 4.2.9_ is implemented as a +(scheme
+  case-lambda)+ library export and thus is not a reserved symbol.
 
   * +quote+ _section 4.1.2_
   * +lambda+ _section 4.1.4_
@@ -238,7 +229,10 @@ This roadmap is a *DRAFT*.
   * +define-record-type+ _section 5.5_
   * +define-library+ _section 5.6_
 
-- The following +(scheme base)+ library exports are not supported:
+- Unsupported primitive expressions:
+  * +include-ci+
+
+- Unsupported +(scheme base)+ library exports:
   * +bytevector-copy!+
   * +bytevector-u8-set!+
   * +list-set!+
@@ -251,6 +245,13 @@ This roadmap is a *DRAFT*.
   * +vector-copy!+
   * +vector-fill!+
   * +vector-set!+
+
+- Miscellaneous
+  * The +#!fold-case+ and +#!no-fold-case+ directives are treated as
+    comments and have no effect on identifiers and character names
+    read from the same port.
+  * Inexact constants have double precision regardless of the
+    specified exponent marker.
 
 // == Quickstart
 //
