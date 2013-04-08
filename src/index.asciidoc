@@ -43,13 +43,13 @@ and community.
 The default language is Scheme R7RS.  The default virtual machine is
 Erlang/OTP R16B or higher.
 
-CAUTION: _Please stay tuned for updates.  This documentation is under
-construction._
+CAUTION: _Please stay tuned for CSCM updates.  The specification,
+documentation, and software are under construction._
 
 == Features
 
-- The following standard features are supported or planned to be
-  supported:
+- The following R7RS standard features are already supported or
+  planned to be supported:
 
   * +r7rs+
   * +exact-closed+
@@ -61,15 +61,15 @@ construction._
     +Osfamily+.
   * +windows+ when the Erlang +os:type/0+ function returns +win32+ for
     +Osfamily+.
-  * +<Osfamily>+ as returned by Erlang os:type/0 function
-  * +<Osname>+ as returned by Erlang os:type/0 function
-  * +<Otprel>+ as returned by Erlang erlang:system_info/1 function for
-    +'otp_release'+
-  * +<Sysarch>+ as returned by Erlang erlang:system_info/1 function
-    for +'system_architecture'+
+  * +<Osfamily>+ as returned by the Erlang os:type/0 function
+  * +<Osname>+ as returned by the Erlang os:type/0 function
+  * +<Otprel>+ as returned by the Erlang erlang:system_info/1 function
+    for +'otp_release'+
+  * +<Sysarch>+ as returned by the Erlang erlang:system_info/1
+    function for +'system_architecture'+
   * Subparts of +<Sysarch>+ split by the "-" character token
-  * +<Wordsize>+ as returned by Erlang erlang:system_info/1 function
-    for +{'wordsize', 'external'}+ multiplied by 8
+  * +<Wordsize>+ as returned by the Erlang erlang:system_info/1
+    function for +{'wordsize', 'external'}+ multiplied by 8
   * +big-endian+
   * +scm+
   * +scm-X.Y.Z+ where X is the major, Y is the minor, and Z is the
@@ -77,33 +77,33 @@ construction._
 
 == Roadmap
 
-This roadmap is a *DRAFT*.
+This roadmap is a +DRAFT+.
 
 - Programming
-  * v0.1.0 Sequential "datum" _DONE_
+  * _v0.1.0_ Sequential "datum" *PUBLISHED*
     ** datum model
     ** datum tokenizer and parser
     ** environment primitives
 
-  * *v0.2.0* Sequential "primitive expressions"
-    ** primitive expressions - quote, lambda, if, set!, include
+  * _v0.2.0_ Sequential "primitive expressions" *PUBLISHED*
+    ** primitive expressions - quote, lambda, if, set!, include, include-lib
     ** programs - define
 
-  * *v0.3.0* Sequential "derived expressions"
+  * _v0.3.0_ Sequential "derived expressions" *IN PROGRESS*
     ** derived expressions - cond, case, and, or, when, unless,
        cond-expand, let, let*, letrec, letrec*, let*-values,
        let*-values, letrec-values, begin, do, make-parameter,
        parameterize, guard
     ** programs - define-values
 
-  * *v0.4.0* Sequential "base library"
+  * _v0.4.0_ Sequential "base library"
     ** libraries - base without number (148 procedures)
 
-  * *v0.5.0* Sequential "base number library"
+  * _v0.5.0_ Sequential "base number library"
     ** libraries - base number (52 procedures), complex (6
        procedures), inexact (13 procedures)
 
-  * *v0.6.0* Sequential "libraries"
+  * _v0.6.0_ Sequential "libraries"
     ** programs - import, define-library
     ** libraries - case-lambda (1 procedure), char (22 procedures),
        cxr (25 procedures), eval (2 procedures), file (2 procedures),
@@ -112,61 +112,62 @@ This roadmap is a *DRAFT*.
        procedures), write (8 procedures), r5rs
     ** tools - scm shell
 
-  * *v0.7.0* Sequential "syntax"
+  * _v0.7.0_ Sequential "syntax"
     ** derived expressions - quasiquote, unquote, unquote-splicing
     ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
     ** programs - define-syntax, define-record-type
 
-  * *v0.8.0* Sequential "features"
+  * _v0.8.0_ Sequential "features"
     ** extensions - Erlang-style pattern matching, records, and binary
        support
     ** integration - Erlang native functions, nif functions, and code
        loading
     ** tools - scmc compiler
+    ** performance - lexical addressing for variable lookup
 
-  * *v0.9.0* Sequential "maintenance"
+  * _v0.9.0_ Sequential "maintenance"
     ** bug fixes
     ** refactoring
     ** performance tuning
     ** documentation
 
-  * *v1.0.0* Concurrent "processes"
+  * _v1.0.0_ Concurrent "processes"
     ** extensions - Erlang processes and error handling
 
-  * *v1.1.0* Concurrent "distributed"
+  * _v1.1.0_ Concurrent "distributed"
     ** extensions - Erlang distribution and error handling
 
-  * *v1.2.0* Concurrent "ports and drivers"
+  * _v1.2.0_ Concurrent "ports and drivers"
     ** extensions - Erlang ports, drivers, and error handling
 
-  * *v1.3.0* Concurrent "maintenance"
+  * _v1.3.0_ Concurrent "maintenance"
     ** bug fixes
     ** refactoring
     ** performance tuning
     ** documentation
 
 - Open Telecom Platform (OTP)
-  * *v1.5.0* OTP "applications"
+  * _v1.5.0_ OTP "applications"
     ** behaviors - gen_server, gen_fsm, gen_event, supervisor
     ** logging - system
     ** applications
     ** included applications
     ** distributed applications
 
-  * *v1.6.0* OTP "releases"
+  * _v1.6.0_ OTP "releases"
     ** releases
     ** release handling
     ** release distribution
     ** release deployment
 
-  * *v1.7.0* OTP "maintenance"
+  * _v1.7.0_ OTP "maintenance"
     ** bug fixes
     ** refactoring
     ** performance tuning
     ** documentation
 
 - Tools
-  * *v2.0.0* Tools
+  * _v2.0.0_ Tools
   * ...
 
 - Education and Training
@@ -177,6 +178,24 @@ This roadmap is a *DRAFT*.
 - The following enhancements beyond the <<R7RS>> specification are
   supported:
 
+  * +include+ _primitive expression_.  A filename may start with a
+    path component '$VAR', for some string VAR.  If so, the value of
+    the environment variable VAR as returned by
+    '(get-environment-variable VAR)' is subsititued for '$VAR'.  If
+    +get-environment-variable+ returns false, '$VAR' is left as is.
+    If the filename is absolute (possibly after variable
+    substitution), the include file with that name is included.
+    Otherwise, the specified file is searched for in the current
+    working directory, in the same directory as the current including
+    file, and in the directories given by the 'include' option, in
+    that order.  The 'include' option is available for the scm shell
+    and scm compiler.
+  * +include-lib+ _primitive expression_.  +include-lib+ is similar to
+    +include+ but should not point out an absolute file. Instead, the
+    first path component is assumed to be the name of an _Erlang_
+    application.  If the filename is absolute (possibly after variable
+    substitution), an error is raised.  Otherwise, the file is
+    searched using the Erlang code:lib_dir/1 function.
   * +letrec-values+ _derived expression binding construct_
 
 == Limitations
@@ -196,6 +215,8 @@ This roadmap is a *DRAFT*.
   * +set!+ _section 4.1.6_
   * +include+ _section 4.1.7_
   * +include-ci+ _section 4.1.7_
+  * +include-lib+ _enhancement_
+  * +include-lib-ci+ _unsupported enhancement_
   * +cond+ _section 4.2.1_
   * +case+ _section 4.2.1_
   * +and+ _section 4.2.1_
@@ -229,8 +250,15 @@ This roadmap is a *DRAFT*.
   * +define-record-type+ _section 5.5_
   * +define-library+ _section 5.6_
 
+- Unsupported lexical conventions:
+  * +datum labels+
+  * The +#!fold-case+ and +#!no-fold-case+ directives are treated as
+    comments and have no effect on identifiers and character names
+    read from the same port.
+
 - Unsupported primitive expressions:
   * +include-ci+
+  * +include-lib-ci+ _unsupported enhancement_
 
 - Unsupported +(scheme base)+ library exports:
   * +bytevector-copy!+
@@ -247,34 +275,46 @@ This roadmap is a *DRAFT*.
   * +vector-set!+
 
 - Miscellaneous
-  * The +#!fold-case+ and +#!no-fold-case+ directives are treated as
-    comments and have no effect on identifiers and character names
-    read from the same port.
   * Inexact constants have double precision regardless of the
     specified exponent marker.
 
-// == Quickstart
-//
-// To download and build the scm application in one shot, please follow
-// this recipe:
-//
-// ------
-// $ mkdir working-directory-name
-// $ cd working-directory-name
-// $ git clone https://github.com/the-concurrent-schemer/scm.git scm
-// $ cd scm
-// $ make deps clean compile
-// ------
-//
-// - start REPL
-// - eval an expression
-// - compile a source file or files
-// - ...
+== Contributors
+
+CSCM is always looking for contributors to help with all parts of the
+Roadmap.  If you are interested in Scheme, Erlang, Functional
+programming, or otherwise, please
+mailto:nortonATalum.mit.edu?subject=Inquiry%20about%20The%20Concurrent%20Schemer[contact
+Joe N.] for further information.
+
+== Copyright and License
+
+------------
+The MIT License
+
+Copyright (C) 2013 by Joseph Wayne Norton <norton@alum.mit.edu>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+------------
 
 [bibliography]
-=== CSCM Resources
-
-An incomplete list of CSCM resources.
+== CSCM Resources
+An incomplete +todo+ list of CSCM resources.
 
 - website
 - faq
@@ -292,8 +332,7 @@ An incomplete list of CSCM resources.
   * issue tracker
 
 [bibliography]
-=== Scheme Resources
-
+== Scheme Resources
 An incomplete list of Scheme resources.
 
 [bibliography]
@@ -324,8 +363,7 @@ An incomplete list of Scheme resources.
   Commmunity-Scheme-Wiki. http://community.schemewiki.org
 
 [bibliography]
-=== Erlang Resources
-
+== Erlang Resources
 An incomplete list of Erlang resources.
 
 [bibliography]
@@ -350,8 +388,7 @@ An incomplete list of Erlang resources.
   Workshops. http://www.erlang.org/workshop
 
 [bibliography]
-=== Related Resources
-
+== Related Resources
 An incomplete list of related resources.
 
 - [[[ELIXIR]]] elixir. http://elixir-lang.org
@@ -360,3 +397,4 @@ An incomplete list of related resources.
 
 - [[[TERMITE]]] Termite Scheme. http://code.google.com/p/termite/
 
+// -EOF-

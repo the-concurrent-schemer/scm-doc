@@ -33,7 +33,7 @@
 // Since CSCM is a work in progress, the workshop materials and
 // presentation will be of alpha quality.
 //
-// Please see http://the-concurrent-schemer.github.com/scm-doc/ for
+// Please see http://the-concurrent-schemer.github.io/scm-doc/ for
 // further information.
 //
 //
@@ -64,31 +64,30 @@ Joseph Wayne Norton <norton@alum.mit.edu>
 == Overview
 
 - CSCM
-  * *v0.1.0* Sequential "datum"
+  * _v0.1.0_ Sequential "datum"
     ** datum model
     ** datum tokenizer and parser
     ** environment primitives
 
-  * *v0.2.0* Sequential "primitive expressions"
-    ** primitive expressions - quote, lambda, if, set!, include,
-       include-ci
+  * _v0.2.0_ Sequential "primitive expressions"
+    ** primitive expressions - quote, lambda, if, set!, include, include-lib
     ** programs - define
 
-  * *v0.3.0* Sequential "derived expressions"
+  * _v0.3.0_ Sequential "derived expressions"
     ** derived expressions - cond, case, and, or, when, unless,
        cond-expand, let, let*, letrec, letrec*, let*-values,
        let*-values, letrec-values, begin, do, make-parameter,
        parameterize, guard
     ** programs - define-values
 
-  * *v0.4.0* Sequential "base library"
+  * _v0.4.0_ Sequential "base library"
     ** libraries - base without number (148 procedures)
 
-  * *v0.5.0* Sequential "base number library"
+  * _v0.5.0_ Sequential "base number library"
     ** libraries - base number (52 procedures), complex (6
        procedures), inexact (13 procedures)
 
-  * *v0.6.0* Sequential "libraries"
+  * _v0.6.0_ Sequential "libraries"
     ** programs - import, define-library
     ** libraries - case-lambda (1 procedure), char (22 procedures),
        cxr (25 procedures), eval (2 procedures), file (2 procedures),
@@ -97,35 +96,38 @@ Joseph Wayne Norton <norton@alum.mit.edu>
        procedures), write (8 procedures), r5rs
     ** tools - scm shell
 
-  * *v0.7.0* Sequential "syntax"
+  * _v0.7.0_ Sequential "syntax"
     ** derived expressions - quasiquote, unquote, unquote-splicing
     ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
     ** programs - define-syntax, define-record-type
 
-  * *v0.8.0* Sequential "features"
+  * _v0.8.0_ Sequential "features"
     ** extensions - Erlang-style pattern matching, records, and binary
        support
     ** integration - Erlang native functions, nif functions, and code
        loading
     ** tools - scmc compiler
+    ** performance - lexical addressing for variable lookup
 
-  * *v0.9.0* Sequential "maintenance"
+  * _v0.9.0_ Sequential "maintenance"
     ** bug fixes
     ** refactoring
     ** performance tuning
     ** documentation
 
-  * *v1.0.0* Concurrent "processes"
+  * _v1.0.0_ Concurrent "processes"
     ** extensions - Erlang processes and error handling
 
-  * *v1.1.0* Concurrent "distributed"
+  * _v1.1.0_ Concurrent "distributed"
     ** extensions - Erlang distribution and error handling
 
-  * *v1.2.0* Concurrent "ports and drivers"
+  * _v1.2.0_ Concurrent "ports and drivers"
     ** extensions - Erlang ports, drivers, and error handling
 
-  * *v1.3.0* Concurrent "maintenance"
+  * _v1.3.0_ Concurrent "maintenance"
     ** bug fixes
     ** refactoring
     ** performance tuning
     ** documentation
+
+// -EOF-
