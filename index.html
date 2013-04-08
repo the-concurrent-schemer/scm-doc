@@ -74,8 +74,8 @@ Computer Science Laborary and is maintained as an open-source project
 and community.</p>
 <p>The default language is Scheme R7RS.  The default virtual machine is
 Erlang/OTP R16B or higher.</p>
-<p><span class="label label-caution">Caution</span> <small>Please stay tuned for updates.  This documentation is under
-construction.</small></p>
+<p><span class="label label-caution">Caution</span> <small>Please stay tuned for CSCM updates.  The specification,
+documentation, and software are under construction.</small></p>
 </section>
 <section id="features">
   <div class="page-header">
@@ -83,8 +83,8 @@ construction.</small></p>
   </div>
 <ul>
 <li>
-The following standard features are supported or planned to be
-  supported:
+The following R7RS standard features are already supported or
+  planned to be supported:
 <ul>
 <li>
 <code>r7rs</code>
@@ -113,25 +113,25 @@ The following standard features are supported or planned to be
     <code>Osfamily</code>.
 </li>
 <li>
-<code>&lt;Osfamily&gt;</code> as returned by Erlang os:type/0 function
+<code>&lt;Osfamily&gt;</code> as returned by the Erlang os:type/0 function
 </li>
 <li>
-<code>&lt;Osname&gt;</code> as returned by Erlang os:type/0 function
+<code>&lt;Osname&gt;</code> as returned by the Erlang os:type/0 function
 </li>
 <li>
-<code>&lt;Otprel&gt;</code> as returned by Erlang erlang:system_info/1 function for
-    <code><em>otp_release</em></code>
+<code>&lt;Otprel&gt;</code> as returned by the Erlang erlang:system_info/1 function
+    for <code><em>otp_release</em></code>
 </li>
 <li>
-<code>&lt;Sysarch&gt;</code> as returned by Erlang erlang:system_info/1 function
-    for <code><em>system_architecture</em></code>
+<code>&lt;Sysarch&gt;</code> as returned by the Erlang erlang:system_info/1
+    function for <code><em>system_architecture</em></code>
 </li>
 <li>
 Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
 </li>
 <li>
-<code>&lt;Wordsize&gt;</code> as returned by Erlang erlang:system_info/1 function
-    for <code>{<em>wordsize</em>, <em>external</em>}</code> multiplied by 8
+<code>&lt;Wordsize&gt;</code> as returned by the Erlang erlang:system_info/1
+    function for <code>{<em>wordsize</em>, <em>external</em>}</code> multiplied by 8
 </li>
 <li>
 <code>big-endian</code>
@@ -151,13 +151,13 @@ Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
   <div class="page-header">
     <h1>Roadmap</h1>
   </div>
-<p>This roadmap is a <strong>DRAFT</strong>.</p>
+<p>This roadmap is a <code>DRAFT</code>.</p>
 <ul>
 <li>
 Programming
 <ul>
 <li>
-v0.1.0 Sequential "datum" <small>DONE</small>
+<small>v0.1.0</small> Sequential "datum" <strong>PUBLISHED</strong>
 <ul>
 <li>
 datum model
@@ -171,10 +171,10 @@ environment primitives
 </ul>
 </li>
 <li>
-<strong>v0.2.0</strong> Sequential "primitive expressions"
+<small>v0.2.0</small> Sequential "primitive expressions" <strong>PUBLISHED</strong>
 <ul>
 <li>
-primitive expressions - quote, lambda, if, set!, include
+primitive expressions - quote, lambda, if, set!, include, include-lib
 </li>
 <li>
 programs - define
@@ -182,7 +182,7 @@ programs - define
 </ul>
 </li>
 <li>
-<strong>v0.3.0</strong> Sequential "derived expressions"
+<small>v0.3.0</small> Sequential "derived expressions" <strong>IN PROGRESS</strong>
 <ul>
 <li>
 derived expressions - cond, case, and, or, when, unless,
@@ -196,7 +196,7 @@ programs - define-values
 </ul>
 </li>
 <li>
-<strong>v0.4.0</strong> Sequential "base library"
+<small>v0.4.0</small> Sequential "base library"
 <ul>
 <li>
 libraries - base without number (148 procedures)
@@ -204,7 +204,7 @@ libraries - base without number (148 procedures)
 </ul>
 </li>
 <li>
-<strong>v0.5.0</strong> Sequential "base number library"
+<small>v0.5.0</small> Sequential "base number library"
 <ul>
 <li>
 libraries - base number (52 procedures), complex (6
@@ -213,7 +213,7 @@ libraries - base number (52 procedures), complex (6
 </ul>
 </li>
 <li>
-<strong>v0.6.0</strong> Sequential "libraries"
+<small>v0.6.0</small> Sequential "libraries"
 <ul>
 <li>
 programs - import, define-library
@@ -231,7 +231,7 @@ tools - scm shell
 </ul>
 </li>
 <li>
-<strong>v0.7.0</strong> Sequential "syntax"
+<small>v0.7.0</small> Sequential "syntax"
 <ul>
 <li>
 derived expressions - quasiquote, unquote, unquote-splicing
@@ -245,7 +245,7 @@ programs - define-syntax, define-record-type
 </ul>
 </li>
 <li>
-<strong>v0.8.0</strong> Sequential "features"
+<small>v0.8.0</small> Sequential "features"
 <ul>
 <li>
 extensions - Erlang-style pattern matching, records, and binary
@@ -258,10 +258,13 @@ integration - Erlang native functions, nif functions, and code
 <li>
 tools - scmc compiler
 </li>
+<li>
+performance - lexical addressing for variable lookup
+</li>
 </ul>
 </li>
 <li>
-<strong>v0.9.0</strong> Sequential "maintenance"
+<small>v0.9.0</small> Sequential "maintenance"
 <ul>
 <li>
 bug fixes
@@ -278,7 +281,7 @@ documentation
 </ul>
 </li>
 <li>
-<strong>v1.0.0</strong> Concurrent "processes"
+<small>v1.0.0</small> Concurrent "processes"
 <ul>
 <li>
 extensions - Erlang processes and error handling
@@ -286,7 +289,7 @@ extensions - Erlang processes and error handling
 </ul>
 </li>
 <li>
-<strong>v1.1.0</strong> Concurrent "distributed"
+<small>v1.1.0</small> Concurrent "distributed"
 <ul>
 <li>
 extensions - Erlang distribution and error handling
@@ -294,7 +297,7 @@ extensions - Erlang distribution and error handling
 </ul>
 </li>
 <li>
-<strong>v1.2.0</strong> Concurrent "ports and drivers"
+<small>v1.2.0</small> Concurrent "ports and drivers"
 <ul>
 <li>
 extensions - Erlang ports, drivers, and error handling
@@ -302,7 +305,7 @@ extensions - Erlang ports, drivers, and error handling
 </ul>
 </li>
 <li>
-<strong>v1.3.0</strong> Concurrent "maintenance"
+<small>v1.3.0</small> Concurrent "maintenance"
 <ul>
 <li>
 bug fixes
@@ -324,7 +327,7 @@ documentation
 Open Telecom Platform (OTP)
 <ul>
 <li>
-<strong>v1.5.0</strong> OTP "applications"
+<small>v1.5.0</small> OTP "applications"
 <ul>
 <li>
 behaviors - gen_server, gen_fsm, gen_event, supervisor
@@ -344,7 +347,7 @@ distributed applications
 </ul>
 </li>
 <li>
-<strong>v1.6.0</strong> OTP "releases"
+<small>v1.6.0</small> OTP "releases"
 <ul>
 <li>
 releases
@@ -361,7 +364,7 @@ release deployment
 </ul>
 </li>
 <li>
-<strong>v1.7.0</strong> OTP "maintenance"
+<small>v1.7.0</small> OTP "maintenance"
 <ul>
 <li>
 bug fixes
@@ -383,7 +386,7 @@ documentation
 Tools
 <ul>
 <li>
-<strong>v2.0.0</strong> Tools
+<small>v2.0.0</small> Tools
 </li>
 <li>
 &#8230;
@@ -409,6 +412,28 @@ Education and Training
 The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification are
   supported:
 <ul>
+<li>
+<code>include</code> <small>primitive expression</small>.  A filename may start with a
+    path component <em>$VAR</em>, for some string VAR.  If so, the value of
+    the environment variable VAR as returned by
+    <em>(get-environment-variable VAR)</em> is subsititued for <em>$VAR</em>.  If
+    <code>get-environment-variable</code> returns false, <em>$VAR</em> is left as is.
+    If the filename is absolute (possibly after variable
+    substitution), the include file with that name is included.
+    Otherwise, the specified file is searched for in the current
+    working directory, in the same directory as the current including
+    file, and in the directories given by the <em>include</em> option, in
+    that order.  The <em>include</em> option is available for the scm shell
+    and scm compiler.
+</li>
+<li>
+<code>include-lib</code> <small>primitive expression</small>.  <code>include-lib</code> is similar to
+    <code>include</code> but should not point out an absolute file. Instead, the
+    first path component is assumed to be the name of an <small>Erlang</small>
+    application.  If the filename is absolute (possibly after variable
+    substitution), an error is raised.  Otherwise, the file is
+    searched using the Erlang code:lib_dir/1 function.
+</li>
 <li>
 <code>letrec-values</code> <small>derived expression binding construct</small>
 </li>
@@ -448,6 +473,12 @@ The following symbols are reserved and not allowed as the variable
 </li>
 <li>
 <code>include-ci</code> <small>section 4.1.7</small>
+</li>
+<li>
+<code>include-lib</code> <small>enhancement</small>
+</li>
+<li>
+<code>include-lib-ci</code> <small>unsupported enhancement</small>
 </li>
 <li>
 <code>cond</code> <small>section 4.2.1</small>
@@ -548,10 +579,26 @@ The following symbols are reserved and not allowed as the variable
 </ul>
 </li>
 <li>
+Unsupported lexical conventions:
+<ul>
+<li>
+<code>datum labels</code>
+</li>
+<li>
+The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
+    comments and have no effect on identifiers and character names
+    read from the same port.
+</li>
+</ul>
+</li>
+<li>
 Unsupported primitive expressions:
 <ul>
 <li>
 <code>include-ci</code>
+</li>
+<li>
+<code>include-lib-ci</code> <small>unsupported enhancement</small>
 </li>
 </ul>
 </li>
@@ -600,22 +647,54 @@ Unsupported <code>(scheme base)</code> library exports:
 Miscellaneous
 <ul>
 <li>
-The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
-    comments and have no effect on identifiers and character names
-    read from the same port.
-</li>
-<li>
 Inexact constants have double precision regardless of the
     specified exponent marker.
 </li>
 </ul>
 </li>
 </ul>
+</section>
+<section id="contributors">
+  <div class="page-header">
+    <h1>Contributors</h1>
+  </div>
+<p>CSCM is always looking for contributors to help with all parts of the
+Roadmap.  If you are interested in Scheme, Erlang, Functional
+programming, or otherwise, please
+<a href="mailto:nortonATalum.mit.edu?subject=Inquiry%20about%20The%20Concurrent%20Schemer">contact
+Joe N.</a> for further information.</p>
+</section>
+<section id="copyright_and_license">
+  <div class="page-header">
+    <h1>Copyright and License</h1>
+  </div>
+<pre class="prettyprint">The MIT License
+
+Copyright (C) 2013 by Joseph Wayne Norton &lt;norton@alum.mit.edu&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</pre>
+</section>
 <section id="cscm_resources">
   <div class="page-header">
     <h1>CSCM Resources</h1>
   </div>
-<p>An incomplete list of CSCM resources.</p>
+<p>An incomplete <code>todo</code> list of CSCM resources.</p>
 <ul>
 <li>
 website
@@ -785,7 +864,6 @@ issue tracker
 <a id="TERMITE"></a>[TERMITE] Termite Scheme. <a href="http://code.google.com/p/termite/">http://code.google.com/p/termite/</a>
 </li>
 </ul>
-</section>
 </section>
         </div>
       </div>
