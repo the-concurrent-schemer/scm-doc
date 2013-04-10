@@ -182,13 +182,28 @@ programs - define
 </ul>
 </li>
 <li>
-<small>v0.3.0</small> Sequential "derived expressions" <strong>IN PROGRESS</strong>
+<small>v0.2.5</small> Sequential "derived expressions" (part 1 of 2) <strong>IN PROGRESS</strong>
 <ul>
 <li>
 derived expressions - cond, case, and, or, when, unless,
-       cond-expand, let, let*, letrec, letrec*, let*-values,
-       let*-values, letrec-values, begin, do, make-parameter,
-       parameterize, guard
+       cond-expand, let, let*, letrec, letrec*, let-values,
+       let*-values, letrec-values, begin, do
+</li>
+<li>
+temporary library procedures - eqv?
+</li>
+</ul>
+</li>
+<li>
+<small>v0.3.0</small> Sequential "derived expressions" (part 2 of 2)
+<ul>
+<li>
+derived expressions - make-parameter, parameterize, guard
+</li>
+<li>
+temporary library procedures - apply, call-with-values,
+       call-with-current-continuation (a.k.a. call/cc),
+       raise-continuable, values, with-exception-handler
 </li>
 <li>
 programs - define-values
