@@ -94,10 +94,10 @@ This roadmap is a +DRAFT+.
        cond-expand, let, let*, letrec, letrec*, begin, do, named let
     ** temporary library procedures - eqv?, not
 
-  * _v0.2.8_ Sequential "skeleton for libraries" *IN PROGRESS*
-    ** libraries - skeleton to act as a placeholder for all libraries
+  * _v0.2.8_ Sequential "skeleton for libraries" *PUBLISHED*
+    ** libraries - skeleton implementation framework for all libraries
 
-  * _v0.3.0_ Sequential "derived expressions" (part 2 of 2)
+  * _v0.3.0_ Sequential "derived expressions" (part 2 of 2) *IN PROGRESS*
     ** derived expressions - let-values, let*-values, letrec-values,
        make-parameter, parameterize, guard
     ** temporary library procedures - apply, call-with-values,
