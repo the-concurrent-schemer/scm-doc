@@ -142,9 +142,21 @@ This roadmap is a +DRAFT+.
 
   * _v1.0.0_ Concurrent "processes"
     ** extensions - Erlang processes and error handling
+    ** libraries - erlang (demonitor, hibernate, is-process-alive,
+       link, monitor, process-flag, process-info, processes, register,
+       registered, resume-process, self, recv, send, send-after,
+       send-nosuspend, spawn, spawn-link, spawn-monitor, spawn-opt,
+       suspend-process, unlink, unregister, whereis, yield)
 
   * _v1.1.0_ Concurrent "distributed"
     ** extensions - Erlang distribution and error handling
+    ** libraries - erlang (disconnect-node, is-alive, monitor-node,
+       node, nodes)
+    ** libraries - net-adm (dns-hostname, host-file, localhost, names,
+       ping, world, world-list)
+    ** libraries - net-kernel (allow, connect-node, monitor-nodes,
+       get-net-ticktime, set-net-ticktime, start, stop)
+    ** tools - epmd
 
   * _v1.2.0_ Concurrent "ports and drivers"
     ** extensions - Erlang ports, drivers, and error handling
@@ -289,11 +301,14 @@ This roadmap is a +DRAFT+.
 
 == Contributors
 
-CSCM is always looking for contributors to help with all parts of the
+CSCM is aimed at becoming an educational tool and a well-established,
+high-quality implementation of concurrent Scheme.
+
+CSCM is looking for contributors to help with all parts of the
 Roadmap.  If you are interested in Scheme, Erlang, Functional
 programming, or otherwise, please
 mailto:nortonATalum.mit.edu?subject=Inquiry%20about%20The%20Concurrent%20Schemer[contact
-Joe N.] for further information.
+Joe N.] for more information.
 
 == Copyright and License
 
