@@ -35,16 +35,36 @@ Scheme.
 
 Erlang is a programming language used to build massively scalable,
 soft, real-time systems with requirements on high availability.
-Erlang's runtime system has built-in support for concurrency,
+Erlang's run-time system has built-in support for concurrency,
 distribution and fault tolerance.  Erlang is designed at the Ericsson
-Computer Science Laborary and is maintained as an open-source project
-and community.
+Computer Science Laboratory and is maintained as an open-source
+project and community.
 
 The default language is Scheme R7RS.  The default virtual machine is
 Erlang/OTP R16B or higher.
 
 CAUTION: _Please stay tuned for CSCM updates.  The specification,
 documentation, and software are under construction._
+
+== Philosophy
+
+There is nothing new (and plenty of old) about CSCM.  Scheme is
+Scheme.  Erlang is Erlang.  CSCM is Scheme and Erlang.  Nothing is
+lost but a lot is to be gained.
+
+If one already knows Scheme, one only needs to learn Erlang to know
+CSCM.  If one already knows Erlang, one only needs to learn Scheme to
+know CSCM.  If one already knows both Scheme and Erlang, one already
+knows CSCM.
+
+CSCM is nothing more than a carefully constructed implementation of
+Scheme.  By leveraging the Erlang language, CSCM can target a concise,
+precise specification of the Scheme language.  By leveraging the
+Erlang VM, CSCM can target a performant, robust implementation of the
+Scheme language.
+
+CSCM is aimed at becoming an educational tool and a well-established,
+high-quality implementation of concurrent Scheme.
 
 == Features
 
@@ -79,7 +99,7 @@ documentation, and software are under construction._
 
 This
 http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf[overview]
-of the Scheme programming language downloadable from the Scheme
+of the Scheme programming language download-able from the Scheme
 Report\'s website is a good place to start.  The complete Scheme R7RS
 http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf[draft
 9] specification available from the same website is the best next
@@ -212,7 +232,7 @@ This is roadmap is a +DRAFT+.
   * +include+ _primitive expression_.  A filename may start with a
     path component '$VAR', for some string VAR.  If so, the value of
     the environment variable VAR as returned by
-    '(get-environment-variable VAR)' is subsititued for '$VAR'.  If
+    '(get-environment-variable VAR)' is substituted for '$VAR'.  If
     +get-environment-variable+ returns false, '$VAR' is left as is.
     If the filename is absolute (possibly after variable
     substitution), the include file with that name is included.
@@ -314,7 +334,7 @@ This is roadmap is a +DRAFT+.
 Please report software issues to the
 https://github.com/the-concurrent-schemer/scm/issues[scm] GitHub issue
 tracker if you have have trouble, found a bug, or simply have a
-question.  Simarily, please report documentation and specification
+question.  Similarly, please report documentation and specification
 issues to the
 https://github.com/the-concurrent-schemer/scm-doc/issues[scm-doc]
 GitHub issue tracker.
@@ -323,12 +343,14 @@ Support is provided on a timely, best-effort basis.
 
 == Contributors
 
-CSCM is aimed at becoming an educational tool and a well-established,
-high-quality implementation of concurrent Scheme.
-
 CSCM is looking for contributors to help with all parts of the
-Roadmap.  If you are interested in Scheme, Erlang, Functional
-programming, or otherwise, please
+Roadmap.
+
+[source,scheme]
+(define #Fun (+ #Scheme #Erlang))
+
+If you are interested in Scheme, Erlang, Functional programming, or
+otherwise, please
 mailto:nortonATalum.mit.edu?subject=Inquiry%20about%20The%20Concurrent%20Schemer[contact
 Joe N.] for more information.
 
@@ -406,7 +428,7 @@ An incomplete list of Scheme resources.
   resources. http://www.schemers.org
 
 - [[[SCMWIKI]]]
-  Commmunity-Scheme-Wiki. http://community.schemewiki.org
+  Community-Scheme-Wiki. http://community.schemewiki.org
 
 [bibliography]
 == Erlang Resources
