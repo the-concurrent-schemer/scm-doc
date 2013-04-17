@@ -68,14 +68,33 @@ functional, and object-oriented styles, find convenient expression in
 Scheme.</p>
 <p>Erlang is a programming language used to build massively scalable,
 soft, real-time systems with requirements on high availability.
-Erlang&#8217;s runtime system has built-in support for concurrency,
+Erlang&#8217;s run-time system has built-in support for concurrency,
 distribution and fault tolerance.  Erlang is designed at the Ericsson
-Computer Science Laborary and is maintained as an open-source project
-and community.</p>
+Computer Science Laboratory and is maintained as an open-source
+project and community.</p>
 <p>The default language is Scheme R7RS.  The default virtual machine is
 Erlang/OTP R16B or higher.</p>
 <p><span class="label label-caution">Caution</span> <small>Please stay tuned for CSCM updates.  The specification,
 documentation, and software are under construction.</small></p>
+</section>
+<section id="philosophy">
+  <div class="page-header">
+    <h1>Philosophy</h1>
+  </div>
+<p>There is nothing new (and plenty of old) about CSCM.  Scheme is
+Scheme.  Erlang is Erlang.  CSCM is Scheme and Erlang.  Nothing is
+lost but a lot is to be gained.</p>
+<p>If one already knows Scheme, one only needs to learn Erlang to know
+CSCM.  If one already knows Erlang, one only needs to learn Scheme to
+know CSCM.  If one already knows both Scheme and Erlang, one already
+knows CSCM.</p>
+<p>CSCM is nothing more than a carefully constructed implementation of
+Scheme.  By leveraging the Erlang language, CSCM can target a concise,
+precise specification of the Scheme language.  By leveraging the
+Erlang VM, CSCM can target a performant, robust implementation of the
+Scheme language.</p>
+<p>CSCM is aimed at becoming an educational tool and a well-established,
+high-quality implementation of concurrent Scheme.</p>
 </section>
 <section id="features">
   <div class="page-header">
@@ -153,7 +172,7 @@ Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
   </div>
 <p>This
 <a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf">overview</a>
-of the Scheme programming language downloadable from the Scheme
+of the Scheme programming language download-able from the Scheme
 Report's website is a good place to start.  The complete Scheme R7RS
 <a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf">draft
 9</a> specification available from the same website is the best next
@@ -473,7 +492,7 @@ The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification a
 <code>include</code> <small>primitive expression</small>.  A filename may start with a
     path component <em>$VAR</em>, for some string VAR.  If so, the value of
     the environment variable VAR as returned by
-    <em>(get-environment-variable VAR)</em> is subsititued for <em>$VAR</em>.  If
+    <em>(get-environment-variable VAR)</em> is substituted for <em>$VAR</em>.  If
     <code>get-environment-variable</code> returns false, <em>$VAR</em> is left as is.
     If the filename is absolute (possibly after variable
     substitution), the include file with that name is included.
@@ -718,7 +737,7 @@ Inexact constants have double precision regardless of the
 <p>Please report software issues to the
 <a href="https://github.com/the-concurrent-schemer/scm/issues">scm</a> GitHub issue
 tracker if you have have trouble, found a bug, or simply have a
-question.  Simarily, please report documentation and specification
+question.  Similarly, please report documentation and specification
 issues to the
 <a href="https://github.com/the-concurrent-schemer/scm-doc/issues">scm-doc</a>
 GitHub issue tracker.</p>
@@ -728,11 +747,16 @@ GitHub issue tracker.</p>
   <div class="page-header">
     <h1>Contributors</h1>
   </div>
-<p>CSCM is aimed at becoming an educational tool and a well-established,
-high-quality implementation of concurrent Scheme.</p>
 <p>CSCM is looking for contributors to help with all parts of the
-Roadmap.  If you are interested in Scheme, Erlang, Functional
-programming, or otherwise, please
+Roadmap.</p>
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #FF0000">(</span><span style="font-weight: bold"><span style="color: #0000FF">define</span></span> <span style="color: #009900">#F</span>un <span style="color: #FF0000">(</span>+ #Scheme #Erlang<span style="color: #FF0000">))</span></tt></pre></div></div>
+<p>If you are interested in Scheme, Erlang, Functional programming, or
+otherwise, please
 <a href="mailto:nortonATalum.mit.edu?subject=Inquiry%20about%20The%20Concurrent%20Schemer">contact
 Joe N.</a> for more information.</p>
 </section>
@@ -867,7 +891,7 @@ issue tracker
 <li>
 <p>
 <a id="SCMWIKI"></a>[SCMWIKI]
-  Commmunity-Scheme-Wiki. <a href="http://community.schemewiki.org">http://community.schemewiki.org</a>
+  Community-Scheme-Wiki. <a href="http://community.schemewiki.org">http://community.schemewiki.org</a>
 </p>
 </li>
 </ul></div>
