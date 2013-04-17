@@ -461,6 +461,8 @@ An incomplete list of related resources.
 
 - [[[ELIXIR]]] elixir. http://elixir-lang.org
 
+- [[[JOXA]]] Joxa. http://joxa.org
+
 - [[[LFE]]] Lisp Flavored Erlang. http://lfe.github.com
 
 - [[[TERMITE]]] Termite Scheme. http://code.google.com/p/termite/
