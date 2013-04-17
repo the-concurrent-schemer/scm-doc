@@ -75,9 +75,19 @@ documentation, and software are under construction._
   * +scm-X.Y.Z+ where X is the major, Y is the minor, and Z is the
     patch release version of scm
 
+== Documentation
+
+This
+http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf[overview]
+of the Scheme programming language downloadable from the Scheme
+Report\'s website is a good place to start.  The complete Scheme R7RS
+http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf[draft
+9] specification available from the same website is the best next
+step.
+
 == Roadmap
 
-This roadmap is a +DRAFT+.
+This is roadmap is a +DRAFT+.
 
 - Programming
   * _v0.1.0_ Sequential "datum" *PUBLISHED*
@@ -298,6 +308,18 @@ This roadmap is a +DRAFT+.
 - Miscellaneous
   * Inexact constants have double precision regardless of the
     specified exponent marker.
+
+== Support
+
+Please report software issues to the
+https://github.com/the-concurrent-schemer/scm/issues[scm] GitHub issue
+tracker if you have have trouble, found a bug, or simply have a
+question.  Simarily, please report documentation and specification
+issues to the
+https://github.com/the-concurrent-schemer/scm-doc/issues[scm-doc]
+GitHub issue tracker.
+
+Support is provided on a timely, best-effort basis.
 
 == Contributors
 
