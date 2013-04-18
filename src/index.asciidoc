@@ -48,14 +48,13 @@ documentation, and software are under construction._
 
 == Philosophy
 
-There is nothing new (and plenty of old) about CSCM.  Scheme is
-Scheme.  Erlang is Erlang.  CSCM is Scheme and Erlang.  Nothing is
-lost but a lot is to be gained.
+There is nothing new (and plenty old) about CSCM.  Scheme is Scheme.
+Erlang is Erlang.  CSCM is Scheme and Erlang.  Nothing is lost but a
+lot is to be gained.
 
-If one already knows Scheme, one only needs to learn Erlang to know
-CSCM.  If one already knows Erlang, one only needs to learn Scheme to
-know CSCM.  If one already knows both Scheme and Erlang, one already
-knows CSCM.
+If one knows Scheme, one needs only to learn Erlang.  If one knows
+Erlang, one needs only to learn Scheme.  If one knows Scheme and
+Erlang, one already knows CSCM.
 
 CSCM is nothing more than a carefully constructed implementation of
 Scheme.  By leveraging the Erlang language, CSCM can target a concise,
@@ -63,8 +62,11 @@ precise specification of the Scheme language.  By leveraging the
 Erlang VM, CSCM can target a performant, robust implementation of the
 Scheme language.
 
-CSCM is aimed at becoming an educational tool and a well-established,
-high-quality implementation of concurrent Scheme.
+CSCM is aimed as an:
+
+- educational tool
+- well-established, high-quality implementation of concurrent Scheme
+- Erlang reference project
 
 == Features
 
@@ -130,10 +132,13 @@ This is roadmap is a +DRAFT+.
   * _v0.3.0_ Sequential "derived expressions" (part 2 of 2) *IN PROGRESS*
     ** derived expressions - let-values, let*-values, letrec-values,
        make-parameter, parameterize, guard
-    ** temporary library procedures - apply, call-with-values,
-       call-with-current-continuation (a.k.a. call/cc),
-       raise-continuable, values, with-exception-handler
-    ** programs - define-values
+    ** *beta* library procedures - apply, call-with-values,
+       call-with-current-continuation (a.k.a. call/cc), values,
+       call-with-values, dynamic-wind, with-exception-handler, raise,
+       raise-continuable, error, error-object?, error-object-message,
+       error-object-irritants, file-error?
+    ** programs -
+       define-values
 
   * _v0.4.0_ Sequential "base library"
     ** libraries - base without number (148 procedures)
