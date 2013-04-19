@@ -231,30 +231,32 @@ This is roadmap is a +DRAFT+.
 
 == Enhancements
 
-- The following enhancements beyond the <<R7RS>> specification are
-  supported:
+These features are not specified in the <<R7RS>> specification.
 
-  * +include+ _primitive expression_.  A filename may start with a
-    path component '$VAR', for some string VAR.  If so, the value of
-    the environment variable VAR as returned by
-    '(get-environment-variable VAR)' is substituted for '$VAR'.  If
-    +get-environment-variable+ returns false, '$VAR' is left as is.
-    If the filename is absolute (possibly after variable
-    substitution), the include file with that name is included.
-    Otherwise, the specified file is searched for in the current
-    working directory, in the same directory as the current including
-    file, and in the directories given by the 'include' option, in
-    that order.  The 'include' option is available for the scm shell
-    and scm compiler.
-  * +include-lib+ _primitive expression_.  +include-lib+ is similar to
-    +include+ but should not point out an absolute file. Instead, the
-    first path component is assumed to be the name of an _Erlang_
-    application.  If the filename is absolute (possibly after variable
-    substitution), an error is raised.  Otherwise, the file is
-    searched using the Erlang code:lib_dir/1 function.
-  * +letrec-values+ _derived expression binding construct_
+ - +include+ _primitive expression_.  A filename may start with a path
+   component '$VAR', for some string VAR.  If so, the value of the
+   environment variable VAR as returned by '(get-environment-variable
+   VAR)' is substituted for '$VAR'.  If +get-environment-variable+
+   returns false, '$VAR' is left as is.  If the filename is absolute
+   (possibly after variable substitution), the include file with that
+   name is included.  Otherwise, the specified file is searched for in
+   the current working directory, in the same directory as the current
+   including file, and in the directories given by the 'include'
+   option, in that order.  The 'include' option is available for the
+   scm shell and scm compiler.
+
+- +include-lib+ _primitive expression_.  +include-lib+ is similar to
+  +include+ but should not point out an absolute file. Instead, the
+  first path component is assumed to be the name of an _Erlang_
+  application.  If the filename is absolute (possibly after variable
+  substitution), an error is raised.  Otherwise, the file is searched
+  using the Erlang code:lib_dir/1 function.
+
+- +letrec-values+ _derived expression binding construct_
 
 == Limitations
+
+These <<R7RS>> items are not supported.
 
 - Unsupported lexical conventions
   * +datum labels+
