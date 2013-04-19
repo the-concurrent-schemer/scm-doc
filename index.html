@@ -495,37 +495,31 @@ Education and Training
   <div class="page-header">
     <h1>Enhancements</h1>
   </div>
+<p>These features are not specified in the <a href="#R7RS">[R7RS]</a> specification.</p>
 <ul>
 <li>
-The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification are
-  supported:
-<ul>
-<li>
-<code>include</code> <small>primitive expression</small>.  A filename may start with a
-    path component <em>$VAR</em>, for some string VAR.  If so, the value of
-    the environment variable VAR as returned by
-    <em>(get-environment-variable VAR)</em> is substituted for <em>$VAR</em>.  If
-    <code>get-environment-variable</code> returns false, <em>$VAR</em> is left as is.
-    If the filename is absolute (possibly after variable
-    substitution), the include file with that name is included.
-    Otherwise, the specified file is searched for in the current
-    working directory, in the same directory as the current including
-    file, and in the directories given by the <em>include</em> option, in
-    that order.  The <em>include</em> option is available for the scm shell
-    and scm compiler.
+<code>include</code> <small>primitive expression</small>.  A filename may start with a path
+   component <em>$VAR</em>, for some string VAR.  If so, the value of the
+   environment variable VAR as returned by <em>(get-environment-variable
+   VAR)</em> is substituted for <em>$VAR</em>.  If <code>get-environment-variable</code>
+   returns false, <em>$VAR</em> is left as is.  If the filename is absolute
+   (possibly after variable substitution), the include file with that
+   name is included.  Otherwise, the specified file is searched for in
+   the current working directory, in the same directory as the current
+   including file, and in the directories given by the <em>include</em>
+   option, in that order.  The <em>include</em> option is available for the
+   scm shell and scm compiler.
 </li>
 <li>
 <code>include-lib</code> <small>primitive expression</small>.  <code>include-lib</code> is similar to
-    <code>include</code> but should not point out an absolute file. Instead, the
-    first path component is assumed to be the name of an <small>Erlang</small>
-    application.  If the filename is absolute (possibly after variable
-    substitution), an error is raised.  Otherwise, the file is
-    searched using the Erlang code:lib_dir/1 function.
+  <code>include</code> but should not point out an absolute file. Instead, the
+  first path component is assumed to be the name of an <small>Erlang</small>
+  application.  If the filename is absolute (possibly after variable
+  substitution), an error is raised.  Otherwise, the file is searched
+  using the Erlang code:lib_dir/1 function.
 </li>
 <li>
 <code>letrec-values</code> <small>derived expression binding construct</small>
-</li>
-</ul>
 </li>
 </ul>
 </section>
@@ -533,6 +527,7 @@ The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification a
   <div class="page-header">
     <h1>Limitations</h1>
   </div>
+<p>These <a href="#R7RS">[R7RS]</a> items are not supported.</p>
 <ul>
 <li>
 Unsupported lexical conventions
