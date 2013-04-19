@@ -535,14 +535,81 @@ The following enhancements beyond the <a href="#R7RS">[R7RS]</a> specification a
   </div>
 <ul>
 <li>
-The following symbols are reserved and not allowed as the variable
-  in <code>set!</code>, <code>define</code>, <code>define-values</code>, <code>define-syntax</code>,
-  <code>define-record-type</code>, and <code>define-library</code> procedure calls. The
-  <code>delay</code>, <code>delay-force</code>, <code>force</code>, <code>promise?</code>, and <code>make-promise</code>
-  symbols of <small>section 4.2.5</small> are implemented as <code>(scheme lazy)</code>
-  library exports and thus are not reserved symbols.  The
-  <code>case-lambda</code> symbol of <small>section 4.2.9</small> is implemented as a <code>(scheme
-  case-lambda)</code> library export and thus is not a reserved symbol.
+Unsupported lexical conventions
+<ul>
+<li>
+<code>datum labels</code>
+</li>
+<li>
+The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
+    comments and have no effect on identifiers and character names
+    read from the same port.
+</li>
+</ul>
+</li>
+<li>
+Unsupported primitive expressions
+<ul>
+<li>
+<code>include-ci</code>
+</li>
+<li>
+<code>include-lib-ci</code> <small>unsupported enhancement</small>
+</li>
+</ul>
+</li>
+<li>
+Unsupported <code>(scheme base)</code> library exports
+<ul>
+<li>
+<code>bytevector-copy!</code>
+</li>
+<li>
+<code>bytevector-u8-set!</code>
+</li>
+<li>
+<code>list-set!</code>
+</li>
+<li>
+<code>read-bytevector!</code>
+</li>
+<li>
+<code>set-car!</code>
+</li>
+<li>
+<code>set-cdr!</code>
+</li>
+<li>
+<code>string-copy!</code>
+</li>
+<li>
+<code>string-fill!</code>
+</li>
+<li>
+<code>string-set!</code>
+</li>
+<li>
+<code>vector-copy!</code>
+</li>
+<li>
+<code>vector-fill!</code>
+</li>
+<li>
+<code>vector-set!</code>
+</li>
+</ul>
+</li>
+<li>
+Miscellaneous
+<ul>
+<li>
+Inexact constants have double precision regardless of the
+    specified exponent marker.
+</li>
+<li>
+The following symbols are not allowed as the variable argument to
+    <code>set!</code>, <code>define</code>, <code>define-values</code>, <code>define-syntax</code>,
+    <code>define-record-type</code>, and <code>define-library</code> procedure calls.
 <ul>
 <li>
 <code>quote</code> <small>section 4.1.2</small>
@@ -593,19 +660,19 @@ The following symbols are reserved and not allowed as the variable
 <code>let</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>let*</code> <small>section 4.2.2</small>
+<code>let  **</code> <small>section 4.2.2</small>
 </li>
 <li>
 <code>letrec</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>letrec*</code> <small>section 4.2.2</small>
+<code>letrec  **</code> <small>section 4.2.2</small>
 </li>
 <li>
 <code>let-values</code> <small>section 4.2.2</small>
 </li>
 <li>
-<code>let*-values</code> <small>section 4.2.2</small>
+<code>let  **-values</code> <small>section 4.2.2</small>
 </li>
 <li>
 <code>letrec-values</code> <small>enhancement</small>
@@ -663,80 +730,12 @@ The following symbols are reserved and not allowed as the variable
 </li>
 <li>
 <code>define-library</code> <small>section 5.6</small>
+<p><span class="label label-note">Note</span> These symbols are reserved symbols in CSCM&#8217;s Scheme expression
+analyzer.  This implementation strategy prevents overriding the
+behavior of the corresponding Scheme expressions with a user-defined
+implementation.  This restriction might be removed in the future.</p>
 </li>
 </ul>
-</li>
-<li>
-Unsupported lexical conventions:
-<ul>
-<li>
-<code>datum labels</code>
-</li>
-<li>
-The <code>!fold-case</code> and <code>!no-fold-case</code> directives are treated as
-    comments and have no effect on identifiers and character names
-    read from the same port.
-</li>
-</ul>
-</li>
-<li>
-Unsupported primitive expressions:
-<ul>
-<li>
-<code>include-ci</code>
-</li>
-<li>
-<code>include-lib-ci</code> <small>unsupported enhancement</small>
-</li>
-</ul>
-</li>
-<li>
-Unsupported <code>(scheme base)</code> library exports:
-<ul>
-<li>
-<code>bytevector-copy!</code>
-</li>
-<li>
-<code>bytevector-u8-set!</code>
-</li>
-<li>
-<code>list-set!</code>
-</li>
-<li>
-<code>read-bytevector!</code>
-</li>
-<li>
-<code>set-car!</code>
-</li>
-<li>
-<code>set-cdr!</code>
-</li>
-<li>
-<code>string-copy!</code>
-</li>
-<li>
-<code>string-fill!</code>
-</li>
-<li>
-<code>string-set!</code>
-</li>
-<li>
-<code>vector-copy!</code>
-</li>
-<li>
-<code>vector-fill!</code>
-</li>
-<li>
-<code>vector-set!</code>
-</li>
-</ul>
-</li>
-<li>
-Miscellaneous
-<ul>
-<li>
-Inexact constants have double precision regardless of the
-    specified exponent marker.
 </li>
 </ul>
 </li>
