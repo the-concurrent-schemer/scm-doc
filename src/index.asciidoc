@@ -256,67 +256,17 @@ This is roadmap is a +DRAFT+.
 
 == Limitations
 
-- The following symbols are reserved and not allowed as the variable
-  in +set!+, +define+, +define-values+, +define-syntax+,
-  +define-record-type+, and +define-library+ procedure calls. The
-  +delay+, +delay-force+, +force+, +promise?+, and +make-promise+
-  symbols of _section 4.2.5_ are implemented as +(scheme lazy)+
-  library exports and thus are not reserved symbols.  The
-  +case-lambda+ symbol of _section 4.2.9_ is implemented as a +(scheme
-  case-lambda)+ library export and thus is not a reserved symbol.
-
-  * +quote+ _section 4.1.2_
-  * +lambda+ _section 4.1.4_
-  * +if+ _section 4.1.5_
-  * +set!+ _section 4.1.6_
-  * +include+ _section 4.1.7_
-  * +include-ci+ _section 4.1.7_
-  * +include-lib+ _enhancement_
-  * +include-lib-ci+ _unsupported enhancement_
-  * +cond+ _section 4.2.1_
-  * +case+ _section 4.2.1_
-  * +and+ _section 4.2.1_
-  * +or+ _section 4.2.1_
-  * +when+ _section 4.2.1_
-  * +unless+ _section 4.2.1_
-  * +cond-expand+ _section 4.2.1_
-  * +let+ _section 4.2.2_
-  * +let*+ _section 4.2.2_
-  * +letrec+ _section 4.2.2_
-  * +letrec*+ _section 4.2.2_
-  * +let-values+ _section 4.2.2_
-  * +let*-values+ _section 4.2.2_
-  * +letrec-values+ _enhancement_
-  * +begin+ _section 4.2.3_
-  * +do+ _section 4.2.4_
-  * +make-parameter+ _section 4.2.6_
-  * +parameterize+ _section 4.2.6_
-  * +guard+ _section 4.2.7_
-  * +quasiquote+ _section 4.2.8_
-  * +unquote+ _section 4.2.8_
-  * +unquote-splicing+ _section 4.2.8_
-  * +let-syntax+ _section 4.3.1_
-  * +letrec-syntax+ _section 4.3.1_
-  * +syntax-rules+ _section 4.3.2_
-  * +syntax-error+ _section 4.3.2_
-  * +import+ _section 5.2_
-  * +define+ _section 5.3.1 and 5.3.2_
-  * +define-values+ _section 5.3.3_
-  * +define-syntax+ _section 5.4_
-  * +define-record-type+ _section 5.5_
-  * +define-library+ _section 5.6_
-
-- Unsupported lexical conventions:
+- Unsupported lexical conventions
   * +datum labels+
   * The +#!fold-case+ and +#!no-fold-case+ directives are treated as
     comments and have no effect on identifiers and character names
     read from the same port.
 
-- Unsupported primitive expressions:
+- Unsupported primitive expressions
   * +include-ci+
   * +include-lib-ci+ _unsupported enhancement_
 
-- Unsupported +(scheme base)+ library exports:
+- Unsupported +(scheme base)+ library exports
   * +bytevector-copy!+
   * +bytevector-u8-set!+
   * +list-set!+
@@ -333,6 +283,56 @@ This is roadmap is a +DRAFT+.
 - Miscellaneous
   * Inexact constants have double precision regardless of the
     specified exponent marker.
+
+  * The following symbols are not allowed as the variable argument to
+    +set!+, +define+, +define-values+, +define-syntax+,
+    +define-record-type+, and +define-library+ procedure calls.
+
+    ** +quote+ _section 4.1.2_
+    ** +lambda+ _section 4.1.4_
+    ** +if+ _section 4.1.5_
+    ** +set!+ _section 4.1.6_
+    ** +include+ _section 4.1.7_
+    ** +include-ci+ _section 4.1.7_
+    ** +include-lib+ _enhancement_
+    ** +include-lib-ci+ _unsupported enhancement_
+    ** +cond+ _section 4.2.1_
+    ** +case+ _section 4.2.1_
+    ** +and+ _section 4.2.1_
+    ** +or+ _section 4.2.1_
+    ** +when+ _section 4.2.1_
+    ** +unless+ _section 4.2.1_
+    ** +cond-expand+ _section 4.2.1_
+    ** +let+ _section 4.2.2_
+    ** +let  **+ _section 4.2.2_
+    ** +letrec+ _section 4.2.2_
+    ** +letrec  **+ _section 4.2.2_
+    ** +let-values+ _section 4.2.2_
+    ** +let  **-values+ _section 4.2.2_
+    ** +letrec-values+ _enhancement_
+    ** +begin+ _section 4.2.3_
+    ** +do+ _section 4.2.4_
+    ** +make-parameter+ _section 4.2.6_
+    ** +parameterize+ _section 4.2.6_
+    ** +guard+ _section 4.2.7_
+    ** +quasiquote+ _section 4.2.8_
+    ** +unquote+ _section 4.2.8_
+    ** +unquote-splicing+ _section 4.2.8_
+    ** +let-syntax+ _section 4.3.1_
+    ** +letrec-syntax+ _section 4.3.1_
+    ** +syntax-rules+ _section 4.3.2_
+    ** +syntax-error+ _section 4.3.2_
+    ** +import+ _section 5.2_
+    ** +define+ _section 5.3.1 and 5.3.2_
+    ** +define-values+ _section 5.3.3_
+    ** +define-syntax+ _section 5.4_
+    ** +define-record-type+ _section 5.5_
+    ** +define-library+ _section 5.6_
++
+NOTE: These symbols are reserved symbols in CSCM's Scheme expression
+analyzer.  This implementation strategy prevents overriding the
+behavior of the corresponding Scheme expressions with a user-defined
+implementation.  This restriction might be removed in the future.
 
 == Support
 
