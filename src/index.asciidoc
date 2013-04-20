@@ -129,7 +129,7 @@ This is roadmap is a +DRAFT+.
   * _v0.2.8_ Sequential "skeleton for libraries" *PUBLISHED*
     ** libraries - skeleton implementation framework for all libraries
 
-  * _v0.3.0_ Sequential "derived expressions" (part 2 of 2) *IN PROGRESS*
+  * _v0.3.0_ Sequential "derived expressions" (part 2 of 2) *PUBLISHED*
     ** derived expressions - let-values, let*-values, letrec-values,
        make-parameter, parameterize, guard
     ** *beta* library procedures - apply, call-with-values,
@@ -137,11 +137,21 @@ This is roadmap is a +DRAFT+.
        call-with-values, dynamic-wind, with-exception-handler, raise,
        raise-continuable, error, error-object?, error-object-message,
        error-object-irritants, file-error?
-    ** programs -
-       define-values
+    ** programs - define-values
 
-  * _v0.4.0_ Sequential "base library"
-    ** libraries - base without number (148 procedures)
+  * _v0.4.0_ Sequential "base library without number" *IN PROGRESS*
+    ** base library - boolean (0 procedures)
+    ** base library - bytevector (16 procedures)
+    ** base library - char (8 procedures)
+    ** base library - control (7 procedures)
+    ** base library - equality (3 procedures)
+    ** base library - exception (0 procedures)
+    ** base library - io (56 procedures)
+    ** base library - list (0 procedures)
+    ** base library - string (20 procedures)
+    ** base library - symbol (4 procedures)
+    ** base library - system (0 procedures)
+    ** base library - vector (20 procedures)
 
   * _v0.5.0_ Sequential "base number library"
     ** libraries - base number (52 procedures), complex (6
@@ -174,6 +184,7 @@ This is roadmap is a +DRAFT+.
     ** refactoring
     ** performance tuning
     ** documentation
+    ** compatibility testing (r7rs, r5rs, etc.)
 
   * _v1.0.0_ Concurrent "processes"
     ** extensions - Erlang processes and error handling
