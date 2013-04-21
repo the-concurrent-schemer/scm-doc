@@ -109,7 +109,7 @@ step.
 
 == Roadmap
 
-This is roadmap is a +DRAFT+.
+This roadmap is a +DRAFT+.
 
 - Programming
   * _v0.1.0_ Sequential "datum" *PUBLISHED*
@@ -349,13 +349,16 @@ implementation.  This restriction might be removed in the future.
 
 == Support
 
-Please report software issues to the
+Please report software issues and patches to the
 https://github.com/the-concurrent-schemer/scm/issues[scm] GitHub issue
-tracker if you have have trouble, found a bug, or simply have a
-question.  Similarly, please report documentation and specification
-issues to the
+tracker if you have have trouble or simply found a bug.  Similarly,
+please report documentation and specification issues to the
 https://github.com/the-concurrent-schemer/scm-doc/issues[scm-doc]
 GitHub issue tracker.
+
+Direct general questions and discussions to the
+https://groups.google.com/group/the-concurrent-schemer[The Concurrent
+Schemer] Google group.
 
 Support is provided on a timely, best-effort basis.
 
