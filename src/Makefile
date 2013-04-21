@@ -10,6 +10,7 @@ pdf: $(PDF)
 gh-pages: clean html
 	git co gh-pages
 	rsync -avz ./index.html ../index.html
+	rsync -avz ./contributors.html ../contributors.html
 	rsync -avz --exclude=.git --delete ./bootstrap-docs/bootstrap/ ../bootstrap/
 
 clean:
@@ -17,7 +18,7 @@ clean:
 
 %.html: %.asciidoc Makefile
 	cd $(<D) && asciidoc $(<F)
-	@perl -i -pe 's~class="brand" href="#"~class="brand" href="https://github.com/the-concurrent-schemer"~;' index.html
+	@perl -i -pe 's~class="brand" href="#"~class="brand" href="https://github.com/the-concurrent-schemer"~;' $(@)
 
 %.pdf: %.asciidoc Makefile
 	cd $(<D) && a2x -f pdf $(<F)
