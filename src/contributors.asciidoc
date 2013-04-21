@@ -1,0 +1,153 @@
+// -*- Doc -*-
+// vim: set syntax=asciidoc:
+
+= The Concurrent Schemer
+Joseph Wayne Norton <norton@alum.mit.edu>
+:Author Initials: JWN
+:title: The Concurrent Schemer
+:description: (define #Fun (+ #Scheme #Erlang))
+:footer: Functional programming for the better good!
+:brand: CSCM
+:brandref: https://github.com/the-concurrent-schemer
+:doctype: article
+:toc2:
+:data-uri:
+:backend: bootstrap-docs
+:link-assets:
+:glyphicons: http://glyphicons.com[Glyphicons]
+
+== Contributors
+
+*The current call for help is to implement the Scheme R7RS base
+library in Erlang.  A little bit of Scheme and/or Erlang programming
+experience is helpful but not absolutely necessary.*
+
+CAUTION: _Please stay tuned for CSCM updates.  The specification,
+documentation, and software are under construction._
+
+== Getting Started
+
+An incomplete *todo* list of "Getting Started" steps.
+
+*Mandatory*
+
+- read the Scheme overview brief
+- read the Scheme R7RS specification
+- download scm
+- build scm
+- run "hello world" example
+- review and understand
+  * the layout of the scm git repository
+  * the CSCM data model
+    ** mapping between Scheme and Erlang
+    ** Erlang "specs" and "types" used for documentation and dialyzer
+       purposes
+  * the Scheme tokenzier and parser
+  * the Scheme environment implementation
+  * the Scheme primitive expression implementation
+  * the Scheme derived expression implementation
+  * the Scheme continuations and exceptions implementation
+  * ...
+
+*Optional (but necessary)*
+
+- run xref
+- setup and run dialyzer
+- generate edocs
+
+== Submissions
+
+This process is a +DRAFT+.
+
+Please review and follow these guidelines for contribution
+submissions.
+
+- Try to keep all submissions simple, clear, and concise
+  * remove all unused or unnecessary code
+  * remove unnecessary whitespace
+  * fix all compiler warnings, run xref, and run dialyzer on each
+    submission
+  * use +@TODO+ comment markers when helpful
+
+- Create a topic branch off the 'dev' branch for each pull request
+
+- Create a single commit for each pull request and try to focus each
+  commit on a single topic or a set of related topics => _help make it
+  easier for others to review and to test_
+
+- Update the Edoc +@author+ tag of each module where you are
+  considered a primary author
+
+- Ensure the the copyright and license shown below is included in all
+  submissions
+
+- As much as "practically" possible, follow the CSCM roadmap and
+  mailto:nortonATalum.mit.edu?subject=Contributing%20to%20The%20Concurrent%20Schemer[notify
+  Joe N.] in advance of your plans to minimize the duplication efforts
+
+- Most importantly there is no rush and have fun!
+
+NOTE: For the near term, only documentation and code submissions will
+be accepted in an attempt to keep the layout and contents of the scm
+repository simple, clear and concise.  Testing such as unit,
+regression, compatibility, and performance testing will be addressed
+later.
+
+== Software Requirements
+
+Erlang/OTP (Mandatory)::
+- Erlang - http://www.erlang.org/
+  * R16B or newer, R16B has been tested most recently
+  * _required for development_
+++
+TIP: If you need to build and to install Erlang on your own,
+https://github.com/spawngrid/kerl[kerl] is highly recommended
+
+Git (Mandatory)::
+- Git - http://git-scm.com/
+  * Git 1.5.4 or newer, Git 1.8.2 has been tested most recently
+  * _required for GitHub_
+- GitHub - https://github.com
+  * Anonymous read-only access using the GIT protocol is default.
+  * Team members having read-write access should add his/her ssh
+    public key under your GitHub account.
+
+Python (Optional)::
+- Python - http://www.python.org
+  * Python 2.4 or newer, Python 2.7.4 has been tested most recently
+    (CAUTION: Python 3.x might be too new)
+  * _required for AsciiDoc_
+
+AsciiDoc (Optional)::
+- AsciiDoc - http://www.methods.co.nz/asciidoc/index.html
+  * Must be version 8.6.1 or newer, 8.6.8 has been tested most
+    recently
+  * _required for generating CSCM's markdown documentation_
+
+== Copyright and License
+
+------------
+The MIT License
+
+Copyright (C) 2013 by Joseph Wayne Norton <norton@alum.mit.edu>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+------------
+
+// -EOF-
