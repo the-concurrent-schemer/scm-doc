@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="AsciiDoc 8.6.8, bootstrap-docs backend">
+    <title>The Concurrent Schemer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="(define #Fun (+ #Scheme #Erlang))">
+    <meta name="author" content="Joseph Wayne Norton">
+    <link href="./bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="./bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="./bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+    <link href="./bootstrap/docs/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="./bootstrap/docs/assets/ico/favicon.ico">
+  </head>
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">CSCM</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active">
+                <a href="#">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="jumbotron subhead" id="overview">
+      <div class="container">
+        <h1>The Concurrent Schemer</h1>
+        <p class="lead">(define #Fun (+ #Scheme #Erlang))</p>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div id="sidebar" class="span3 bs-docs-sidebar">
+          <ul id="toc" class="nav nav-list bs-docs-sidenav">
+</ul>
+        </div>
+        <div id="content" class="span9">
+<section id="contributors">
+  <div class="page-header">
+    <h1>Contributors</h1>
+  </div>
+<p><strong>The current call for help is to implement the Scheme R7RS base
+library in Erlang.  A little bit of Scheme and/or Erlang programming
+experience is helpful but not absolutely necessary.</strong></p>
+<p><span class="label label-caution">Caution</span> <small>Please stay tuned for CSCM updates.  The specification,
+documentation, and software are under construction.</small></p>
+</section>
+<section id="getting_started">
+  <div class="page-header">
+    <h1>Getting Started</h1>
+  </div>
+<p>An incomplete <strong>todo</strong> list of "Getting Started" steps.</p>
+<p><strong>Mandatory</strong></p>
+<ul>
+<li>
+read the Scheme overview brief
+</li>
+<li>
+read the Scheme R7RS specification
+</li>
+<li>
+download scm
+</li>
+<li>
+build scm
+</li>
+<li>
+run "hello world" example
+</li>
+<li>
+review and understand
+<ul>
+<li>
+the layout of the scm git repository
+</li>
+<li>
+the CSCM data model
+<ul>
+<li>
+mapping between Scheme and Erlang
+</li>
+<li>
+Erlang "specs" and "types" used for documentation and dialyzer
+       purposes
+</li>
+</ul>
+</li>
+<li>
+the Scheme tokenzier and parser
+</li>
+<li>
+the Scheme environment implementation
+</li>
+<li>
+the Scheme primitive expression implementation
+</li>
+<li>
+the Scheme derived expression implementation
+</li>
+<li>
+the Scheme continuations and exceptions implementation
+</li>
+<li>
+&#8230;
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Optional (but necessary)</strong></p>
+<ul>
+<li>
+run xref
+</li>
+<li>
+setup and run dialyzer
+</li>
+<li>
+generate edocs
+</li>
+</ul>
+</section>
+<section id="submissions">
+  <div class="page-header">
+    <h1>Submissions</h1>
+  </div>
+<p>This process is a <code>DRAFT</code>.</p>
+<p>Please review and follow these guidelines for contribution
+submissions.</p>
+<ul>
+<li>
+Try to keep all submissions simple, clear, and concise
+<ul>
+<li>
+remove all unused or unnecessary code
+</li>
+<li>
+remove unnecessary whitespace
+</li>
+<li>
+fix all compiler warnings, run xref, and run dialyzer on each
+    submission
+</li>
+<li>
+use <code>@TODO</code> comment markers when helpful
+</li>
+</ul>
+</li>
+<li>
+Create a topic branch off the <em>dev</em> branch for each pull request
+</li>
+<li>
+Create a single commit for each pull request and try to focus each
+  commit on a single topic or a set of related topics &#8658; <small>help make it
+  easier for others to review and to test</small>
+</li>
+<li>
+Update the Edoc <code>@author</code> tag of each module where you are
+  considered a primary author
+</li>
+<li>
+Ensure the the copyright and license shown below is included in all
+  submissions
+</li>
+<li>
+As much as "practically" possible, follow the CSCM roadmap and
+  <a href="mailto:nortonATalum.mit.edu?subject=Contributing%20to%20The%20Concurrent%20Schemer">notify
+  Joe N.</a> in advance of your plans to minimize the duplication efforts
+</li>
+<li>
+Most importantly there is no rush and have fun!
+</li>
+</ul>
+<p><span class="label label-note">Note</span> For the near term, only documentation and code submissions will
+be accepted in an attempt to keep the layout and contents of the scm
+repository simple, clear and concise.  Testing such as unit,
+regression, compatibility, and performance testing will be addressed
+later.</p>
+</section>
+<section id="software_requirements">
+  <div class="page-header">
+    <h1>Software Requirements</h1>
+  </div>
+<dl>
+<dt>
+Erlang/OTP (Mandatory)
+</dt>
+<dd>
+<ul>
+<li>
+Erlang - <a href="http://www.erlang.org/">http://www.erlang.org/</a>
+<ul>
+<li>
+R16B or newer, R16B has been tested most recently
+</li>
+<li>
+<small>required for development</small>
+++
+TIP: If you need to build and to install Erlang on your own,
+<a href="https://github.com/spawngrid/kerl">kerl</a> is highly recommended
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>
+Git (Mandatory)
+</dt>
+<dd>
+<ul>
+<li>
+Git - <a href="http://git-scm.com/">http://git-scm.com/</a>
+<ul>
+<li>
+Git 1.5.4 or newer, Git 1.8.2 has been tested most recently
+</li>
+<li>
+<small>required for GitHub</small>
+</li>
+</ul>
+</li>
+<li>
+GitHub - <a href="https://github.com">https://github.com</a>
+<ul>
+<li>
+Anonymous read-only access using the GIT protocol is default.
+</li>
+<li>
+Team members having read-write access should add his/her ssh
+    public key under your GitHub account.
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>
+Python (Optional)
+</dt>
+<dd>
+<ul>
+<li>
+Python - <a href="http://www.python.org">http://www.python.org</a>
+<ul>
+<li>
+Python 2.4 or newer, Python 2.7.4 has been tested most recently
+    (CAUTION: Python 3.x might be too new)
+</li>
+<li>
+<small>required for AsciiDoc</small>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt>
+AsciiDoc (Optional)
+</dt>
+<dd>
+<ul>
+<li>
+AsciiDoc - <a href="http://www.methods.co.nz/asciidoc/index.html">http://www.methods.co.nz/asciidoc/index.html</a>
+<ul>
+<li>
+Must be version 8.6.1 or newer, 8.6.8 has been tested most
+    recently
+</li>
+<li>
+<small>required for generating CSCM&#8217;s markdown documentation</small>
+</li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="copyright_and_license">
+  <div class="page-header">
+    <h1>Copyright and License</h1>
+  </div>
+<pre class="prettyprint">The MIT License
+
+Copyright (C) 2013 by Joseph Wayne Norton &lt;norton@alum.mit.edu&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</pre>
+</section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Functional programming for the better good!</p>
+      </div>
+    </footer>
+    <script src="http://platform.twitter.com/widgets.js"></script>
+    <script src="./bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="./bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="./bootstrap/docs/assets/js/bootstrap.min.js"></script>
+    <script src="./bootstrap/docs/assets/js/application.js"></script>
+    <script src="./asciidoc.js"></script>
+    <script>asciidoc.install(1);</script>
+  </body>
+</html>
