@@ -101,11 +101,10 @@ CSCM is aimed as an:
 
 This
 http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf[overview]
-of the Scheme programming language download-able from the Scheme
+paper of the Scheme programming language download-able from the Scheme
 Report\'s website is a good place to start.  The complete Scheme R7RS
-http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf[draft
-9] specification available from the same website is the best next
-step.
+http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf[draft9]
+specification available from the same website is the best next step.
 
 == Roadmap
 
@@ -371,9 +370,9 @@ Roadmap.
 (define #Fun (+ #Scheme #Erlang))
 
 If you are interested in Scheme, Erlang, Functional programming, or
-otherwise, please
-mailto:nortonATalum.mit.edu?subject=Inquiry%20about%20The%20Concurrent%20Schemer[contact
-Joe N.] for more information.
+otherwise, please check the
+http://the-concurrent-schemer.github.io/scm-doc/contributors.html[Contributor's
+Guide] for more information.
 
 == Copyright and License
 

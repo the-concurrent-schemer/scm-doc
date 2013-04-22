@@ -1,0 +1,7 @@
+The following people, in chronological order, have sent patches, pull
+requests, and/or bug reports that have been incorporated in CSCM's
+documentation base:
+
+1. Joseph Wayne Norton
+2. Klaus Trainer
+3. ...
