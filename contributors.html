@@ -53,9 +53,65 @@
   <div class="page-header">
     <h1>Contributors</h1>
   </div>
-<p><strong>The current call for help is to implement the Scheme R7RS base
-library in Erlang.  A little bit of Scheme and/or Erlang programming
-experience is helpful but not absolutely necessary.</strong></p>
+<p><strong>The current call for help is to review, implement <small>(in Erlang)</small>, and
+test the Scheme R7RS base library.</strong></p>
+<ul>
+<li>
+<small>v0.4.0</small> Scheme base library (w/o numbers)
+<ul>
+<li>
+section 6.1 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_equality.erl">
+   Equivalence predicates</a>
+</li>
+<li>
+section 6.3 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_boolean.erl">
+   Booleans</a>
+</li>
+<li>
+section 6.4 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_list.erl">
+   Pairs and lists</a>
+</li>
+<li>
+section 6.5 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_symbol.erl">
+   Symbols</a>
+</li>
+<li>
+section 6.6 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_char.erl">
+   Characters</a>
+</li>
+<li>
+section 6.7 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_string.erl">
+   Strings</a>
+</li>
+<li>
+section 6.8 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_vector.erl">
+   Vectors</a>
+</li>
+<li>
+section 6.9 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_bytevector.erl">
+   Bytevectors</a>
+</li>
+<li>
+section 6.10 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl">
+   Control features</a>
+</li>
+<li>
+section 6.11 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl">
+   Exceptions</a>
+</li>
+<li>
+section 6.13 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_io.erl">
+   Input and output</a>
+</li>
+<li>
+section 6.14 <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_system.erl">
+   System interface</a>
+</li>
+</ul>
+</li>
+</ul>
+<p>A little bit of Scheme and/or Erlang programming experience is helpful
+but not absolutely necessary.</p>
 <p><span class="label label-caution">Caution</span> <small>Please stay tuned for CSCM updates.  The specification,
 documentation, and software are under construction.</small></p>
 </section>
@@ -63,75 +119,225 @@ documentation, and software are under construction.</small></p>
   <div class="page-header">
     <h1>Getting Started</h1>
   </div>
-<p>An incomplete <strong>todo</strong> list of "Getting Started" steps.</p>
+<p>An incomplete list of steps for "Getting Started".</p>
 <p><strong>Mandatory</strong></p>
-<ul>
+<ol>
 <li>
-read the Scheme overview brief
+read the Scheme
+  <a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf">overview</a>
+  paper
 </li>
 <li>
-read the Scheme R7RS specification
-</li>
-<li>
-download scm
-</li>
-<li>
-build scm
+download and build
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>git clone git<span style="color: #990000">:</span>//github<span style="color: #990000">.</span>com/the-concurrent-schemer/scm<span style="color: #990000">.</span>git
+cd scm
+make deps
+make
+</tt></pre></div></div>
+<p><span class="label label-tip">Tip</span> Check the Software Requirements listed below before attempting to
+download and build!</p>
 </li>
 <li>
 run "hello world" example
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #FF0000">(</span><span style="font-weight: bold"><span style="color: #0000FF">define</span></span> <span style="font-weight: bold"><span style="color: #000000">hello-world</span></span>
+  <span style="color: #FF0000">(</span><span style="font-weight: bold"><span style="color: #0000FF">lambda</span></span> <span style="color: #FF0000">()</span>
+    <span style="color: #FF0000">(</span>display <span style="color: #FF0000">"Hello World!"</span><span style="color: #FF0000">)))</span></tt></pre></div></div>
+<p>Since CSCM is under construction, this example must be run manually
+for the time being.  Let&#8217;s use the Erlang shell for illustrative
+purposes.</p>
+<ol>
+<li>
+Start the Erlang shell.
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>erl -pa <span style="color: #990000">.</span>/deps/parse-tools/ebin -pa ebin</tt></pre></div></div>
+</li>
+<li>
+Save the "hello word" program as an Erlang string.
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">Str</span> <span style="color: #990000">=</span> <span style="color: #FF0000">"(define hello-world (lambda () (display \"Hello World!\")))"</span><span style="color: #990000">.</span></tt></pre></div></div>
+</li>
+<li>
+Create an empty Scheme environment.
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">Env</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">scmi_env:the_empty</span></span>()<span style="color: #990000">.</span></tt></pre></div></div>
+</li>
+<li>
+Create and register a native Erlang function as a simple
+      implementation for the Scheme display library procedure. The
+      Erlang function writes the given arguments to stdout as Erlang
+      terms and simply returns a Scheme #false to the caller.
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">False</span> <span style="color: #990000">=</span> {<span style="color: #FF6600">boolean</span>,<span style="color: #000080">undefined</span>,<span style="color: #000080">false</span>}<span style="color: #990000">.</span>
+<span style="color: #009900">Proc</span> <span style="color: #990000">=</span> {<span style="color: #FF6600">nipv</span>, <span style="color: #993399">0</span>, <span style="font-weight: bold"><span style="color: #0000FF">fun</span></span>(<span style="color: #009900">Args</span>) <span style="color: #990000">-&gt;</span> <span style="font-weight: bold"><span style="color: #000000">io:format</span></span>(<span style="color: #FF0000">"~p~n"</span>, [<span style="color: #009900">Args</span>]), <span style="color: #009900">False</span> <span style="font-weight: bold"><span style="color: #0000FF">end</span></span>}<span style="color: #990000">.</span>
+<span style="font-weight: bold"><span style="color: #000000">scmi_env:define_variable</span></span>(<span style="color: #FF6600">'display'</span>, <span style="color: #009900">Proc</span>, <span style="color: #009900">Env</span>)<span style="color: #990000">.</span></tt></pre></div></div>
+</li>
+<li>
+Parse and evaluate the "hello world" program.
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>{<span style="color: #FF6600">ok</span>, <span style="color: #009900">Exp</span>} <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">scmd_parse:string</span></span>(<span style="color: #009900">Str</span>)<span style="color: #990000">.</span>
+<span style="font-weight: bold"><span style="color: #000000">scmi_eval:eval</span></span>(<span style="color: #009900">Exp</span>, <span style="color: #009900">Env</span>)<span style="color: #990000">.</span></tt></pre></div></div>
+</li>
+<li>
+Call the Scheme "hello-world" procedure and show the Scheme
+      return value in the Erlang shell.
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #009900">R</span> <span style="color: #990000">=</span> <span style="font-weight: bold"><span style="color: #000000">scmi_eval:eval</span></span>([<span style="color: #FF6600">'hello-world'</span>], <span style="color: #009900">Env</span>)<span style="color: #990000">.</span>
+<span style="color: #009900">R</span><span style="color: #990000">.</span></tt></pre></div></div>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>Optional (but helpful)</strong></p>
+<ol>
+<li>
+read the Scheme R7RS
+   <a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf">draft9</a>
+   specification
 </li>
 <li>
 review and understand
-<ul>
+<ol>
 <li>
-the layout of the scm git repository
+the layout of the scm git
+      <a href="https://github.com/the-concurrent-schemer/scm/tree/dev">repository</a>
+<p><span class="label label-tip">Tip</span> Filename prefixes have meaning &#8658; <code>scmd_</code> is "datum", <code>scmi_</code> is
+"interpreter", <code>scmc_</code> is "compiler", and <code>scml_</code> is "library".</p>
 </li>
 <li>
-the CSCM data model
+the CSCM datum model
 <ul>
 <li>
-mapping between Scheme and Erlang
+<a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_types_impl.erl">implementation</a>
+          of Scheme datums by Erlang terms
 </li>
 <li>
-Erlang "specs" and "types" used for documentation and dialyzer
-       purposes
+Erlang
+          <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_types.erl">types</a>
+          used for documentation and static type analysis
+<p><span class="label label-tip">Tip</span> If helpful, review Erlang&#8217;s
+<a href="http://www.erlang.org/doc/reference_manual/typespec.html">documentation</a>
+about types and function specifications.</p>
 </li>
 </ul>
 </li>
 <li>
-the Scheme tokenzier and parser
+Scheme
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan.xrl">datum</a>
+      and number
+      (<a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num2.xrl">base
+      2</a>,
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num8.xrl">base
+      8</a>,
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num10.xrl">base
+      10</a>, and
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_scan_num16.xrl">base
+      16</a>) tokenizers
 </li>
 <li>
-the Scheme environment implementation
+Scheme
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_parse.yrl">datum</a>
+      and
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_parse_numR.yrl">number</a>
+      parsers
 </li>
 <li>
-the Scheme primitive expression implementation
+Scheme environment resource
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_env.erl">wrapper</a>
+      and
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/c_src/scmi_env.cc">NIF</a>
+<p><span class="label label-tip">Tip</span> If helpful, review Erlang&#8217;s
+<a href="http://www.erlang.org/doc/man/erl_nif.html">documentation</a> about API
+functions for an Erlang NIF library.</p>
 </li>
 <li>
-the Scheme derived expression implementation
+Scheme interpreter
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_eval.erl">evaluator</a>
+      and
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze.erl">syntactic
+      analyzer</a>
 </li>
 <li>
-the Scheme continuations and exceptions implementation
+Scheme
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_primitive.erl">primitive</a>
+      expressions
+</li>
+<li>
+Scheme
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_derived.erl">derived</a>
+      expressions
+</li>
+<li>
+Scheme
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl#L124">control
+      features</a> base library
+</li>
+<li>
+Scheme
+      <a href="https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl#L71">exceptions</a>
+      base library
 </li>
 <li>
 &#8230;
 </li>
-</ul>
+</ol>
 </li>
-</ul>
-<p><strong>Optional (but necessary)</strong></p>
-<ul>
 <li>
 run xref
-</li>
-<li>
-setup and run dialyzer
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>make xref
+</tt></pre></div></div>
 </li>
 <li>
 generate edocs
+<div class="listingblock">
+<div class="content"><!-- Generator: GNU source-highlight 3.1.7
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt>make doc
+</tt></pre></div></div>
 </li>
-</ul>
+</ol>
+<p><span class="label label-note">Note</span> Steps describing how to setup and to run Erlang&#8217;s dialyzer will
+be added later.</p>
 </section>
 <section id="submissions">
   <div class="page-header">
