@@ -156,7 +156,8 @@ R.
       https://github.com/the-concurrent-schemer/scm/tree/dev[repository]
 +
 TIP: Filename prefixes have meaning => +scmd_+ is "datum", +scmi_+ is
-"interpreter", +scmc_+ is "compiler", and +scml_+ is "library".
+"interpreter", +scmc_+ is "compiler", +scml_+ is "library", and +xfm_+
+is "Erlang parse transform".
 
    b. the CSCM datum model
        ** https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmd_types_impl.erl[implementation]
@@ -238,6 +239,76 @@ make doc
 
 NOTE: Steps describing how to setup and to run Erlang's dialyzer will
 be added later.
+
+== Lines Of Code
+
+*Scheme datum*
+
+~*1,200 Erlang* LOC implements a Scheme datum tokenizer and parser.
+
+------
+ $ cloc src/scmd_*
+       12 text files.
+       12 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (24.0 files/s, 3942.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang (yecc)                    2            108             79            487
+ Erlang (leex)                    5            192            265            341
+ Erlang                           5             46            124            329
+ -------------------------------------------------------------------------------
+ SUM:                            12            346            468           1157
+ -------------------------------------------------------------------------------
+------
+
+*Scheme interpreter*
+
+\~*500 C/C++* LOC and ~*1,600 Erlang* LOC implements all Scheme
+primitive and derived expressions.
+
+------
+ $ ~/bin/cloc src/scmi_* c_src
+       14 text files.
+       14 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=1.0 s (14.0 files/s, 2992.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang                          10            345            439           1592
+ C++                              2             93             55            369
+ C/C++ Header                     2             13             44             42
+ -------------------------------------------------------------------------------
+ SUM:                            14            451            538           2003
+ -------------------------------------------------------------------------------
+------
+
+*Scheme library*
+
+~*250 Erlang* LOC implements Scheme continuations, dynamic-wind, and
+exceptions.
+
+------
+ $ ~/bin/cloc src/scml_base_control.erl src/scml_base_exception.erl
+        2 text files.
+        2 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (4.0 files/s, 908.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang                           2             48            167            239
+ -------------------------------------------------------------------------------
+ SUM:                             2             48            167            239
+------
+
+NOTE: The above measurements were taken on CSCM v0.3.0 with a modified
+version of cloc for detecting Erlang leex/yecc files.
 
 == Submissions
 
