@@ -235,7 +235,8 @@ review and understand
 the layout of the scm git
       <a href="https://github.com/the-concurrent-schemer/scm/tree/dev">repository</a>
 <p><span class="label label-tip">Tip</span> Filename prefixes have meaning &#8658; <code>scmd_</code> is "datum", <code>scmi_</code> is
-"interpreter", <code>scmc_</code> is "compiler", and <code>scml_</code> is "library".</p>
+"interpreter", <code>scmc_</code> is "compiler", <code>scml_</code> is "library", and <code>xfm_</code>
+is "Erlang parse transform".</p>
 </li>
 <li>
 the CSCM datum model
@@ -338,6 +339,63 @@ http://www.gnu.org/software/src-highlite -->
 </ol>
 <p><span class="label label-note">Note</span> Steps describing how to setup and to run Erlang&#8217;s dialyzer will
 be added later.</p>
+</section>
+<section id="lines_of_code">
+  <div class="page-header">
+    <h1>Lines Of Code</h1>
+  </div>
+<p><strong>Scheme datum</strong></p>
+<p>~<strong>1,200 Erlang</strong> LOC implements a Scheme datum tokenizer and parser.</p>
+<pre class="prettyprint"> $ cloc src/scmd_*
+       12 text files.
+       12 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (24.0 files/s, 3942.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang (yecc)                    2            108             79            487
+ Erlang (leex)                    5            192            265            341
+ Erlang                           5             46            124            329
+ -------------------------------------------------------------------------------
+ SUM:                            12            346            468           1157
+ -------------------------------------------------------------------------------</pre>
+<p><strong>Scheme interpreter</strong></p>
+<p>~<strong>500 C/C++</strong> LOC and ~<strong>1,600 Erlang</strong> LOC implements all Scheme
+primitive and derived expressions.</p>
+<pre class="prettyprint"> $ ~/bin/cloc src/scmi_* c_src
+       14 text files.
+       14 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=1.0 s (14.0 files/s, 2992.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang                          10            345            439           1592
+ C++                              2             93             55            369
+ C/C++ Header                     2             13             44             42
+ -------------------------------------------------------------------------------
+ SUM:                            14            451            538           2003
+ -------------------------------------------------------------------------------</pre>
+<p><strong>Scheme library</strong></p>
+<p>~<strong>250 Erlang</strong> LOC implements Scheme continuations, dynamic-wind, and
+exceptions.</p>
+<pre class="prettyprint"> $ ~/bin/cloc src/scml_base_control.erl src/scml_base_exception.erl
+        2 text files.
+        2 unique files.
+        0 files ignored.
+
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (4.0 files/s, 908.0 lines/s)
+ -------------------------------------------------------------------------------
+ Language                     files          blank        comment           code
+ -------------------------------------------------------------------------------
+ Erlang                           2             48            167            239
+ -------------------------------------------------------------------------------
+ SUM:                             2             48            167            239</pre>
+<p><span class="label label-note">Note</span> The above measurements were taken on CSCM v0.3.0 with a modified
+version of cloc for detecting Erlang leex/yecc files.</p>
 </section>
 <section id="submissions">
   <div class="page-header">
