@@ -72,8 +72,9 @@ Erlang&#8217;s run-time system has built-in support for concurrency,
 distribution and fault tolerance.  Erlang is designed at the Ericsson
 Computer Science Laboratory and is maintained as an open-source
 project and community.</p>
-<p>The default language is Scheme R7RS.  The default virtual machine is
-Erlang/OTP R16B or higher.</p>
+<p>The default language is Scheme R7RS. The default virtual machine is
+Erlang/OTP R16B or higher.  Scheme R5RS is available as a Scheme
+library.</p>
 <p><span class="label label-caution">Caution</span> <small>Please stay tuned for CSCM updates.  The specification,
 documentation, and software are under construction.</small></p>
 </section>
@@ -305,7 +306,7 @@ base library - vector (20 procedures)
 <ul>
 <li>
 libraries - base number (52 procedures), complex (6
-       procedures), inexact (13 procedures)
+       procedures), inexact (14 procedures)
 </li>
 </ul>
 </li>
@@ -317,10 +318,10 @@ programs - import, define-library
 </li>
 <li>
 libraries - case-lambda (1 procedure), char (22 procedures),
-       cxr (25 procedures), eval (2 procedures), file (2 procedures),
+       cxr (25 procedures), eval (2 procedures), file (11 procedures),
        lazy (5 procedures), load (2 procedures), process-context (7
        procedures), read (2 procedures), repl (1 procedure), time (3
-       procedures), write (8 procedures), r5rs
+       procedures), write (8 procedures), r5rs (2 procedures)
 </li>
 <li>
 tools - scm shell
@@ -629,6 +630,17 @@ Unsupported <code>(scheme base)</code> library exports
 </ul>
 </li>
 <li>
+Unsupported <code>(scheme r5rs)</code> library exports
+<ul>
+<li>
+<code>transcript-on</code>
+</li>
+<li>
+<code>transcript-off</code>
+</li>
+</ul>
+</li>
+<li>
 Miscellaneous
 <ul>
 <li>
@@ -908,6 +920,12 @@ issue tracker
 <a id="R7RS"></a>[R7RS] R7RS <small>Draft</small>. <em>Revised 7th Report on the Algorithmic
   Language
   Scheme</em>. <a href="http://www.scheme-reports.org/2012/working-group-1.html">http://www.scheme-reports.org/2012/working-group-1.html</a>
+</p>
+</li>
+<li>
+<p>
+<a id="R5RS"></a>[R5RS] R5RS. <em>Revised 5th Report on the Algorithmic Language
+  Scheme</em>. <a href="http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf">http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf</a>
 </p>
 </li>
 </ul></div>
