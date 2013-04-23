@@ -298,6 +298,9 @@ These <<R7RS>> items are not supported.
   * +transcript-off+
 
 - Miscellaneous
+  * The maximum number of arguments that may be passed to a procedure
+    is 255.
+
   * Inexact constants have double precision regardless of the
     specified exponent marker.
 
@@ -350,6 +353,21 @@ NOTE: These symbols are reserved symbols in CSCM's Scheme expression
 analyzer.  This implementation strategy prevents overriding the
 behavior of the corresponding Scheme expressions with a user-defined
 implementation.  This restriction might be removed in the future.
+
+== Surprises
+
+These <<R7RS>> items are not considered as limitations (but should be
+documented nevertheless).
+
+- +(scheme base)+ library exports
+  * +eqv?+ compares all structured data recursively except for
+    procedures.
+
+  * +eqv?+ and +eq?+ share the same implementation.
+
+  * +eqv?+ and +equal?+ share the same implementation with one
+    exception for procedures.  Unlike +eqv?+, +equal?+ compares
+    lambda-based procedures recursively.
 
 == Support
 
