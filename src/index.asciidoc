@@ -406,8 +406,11 @@ THE SOFTWARE.
 ------------
 
 [bibliography]
-== CSCM Resources
-An incomplete +todo+ list of CSCM resources.
+== Resources
+
+An incomplete list of CSCM, Scheme, Erlang, and Related resources.
+
+*CSCM*
 
 - website
 - faq
@@ -424,9 +427,7 @@ An incomplete +todo+ list of CSCM resources.
   * source code repositories
   * issue tracker
 
-[bibliography]
-== Scheme Resources
-An incomplete list of Scheme resources.
+*Scheme*
 
 [bibliography]
 .Books
@@ -458,9 +459,7 @@ An incomplete list of Scheme resources.
 - [[[SCMWIKI]]]
   Community-Scheme-Wiki. http://community.schemewiki.org
 
-[bibliography]
-== Erlang Resources
-An incomplete list of Erlang resources.
+*Erlang*
 
 [bibliography]
 .Books
@@ -483,9 +482,7 @@ An incomplete list of Erlang resources.
 - [[[ACMERLANG]]] ACM SIGPLAN Erlang
   Workshops. http://www.erlang.org/workshop
 
-[bibliography]
-== Related Resources
-An incomplete list of related resources.
+*Related*
 
 - [[[ELIXIR]]] elixir. http://elixir-lang.org
 
