@@ -808,6 +808,12 @@ documented nevertheless).</p>
     exception for procedures.  Unlike <code>eqv?</code>, <code>equal?</code> compares
     lambda-based procedures recursively.
 </li>
+<li>
+A pair allocated by <code>cons</code> is not guaranteed to be different (in
+    the sense of <code>eqv?</code>) from every existing object.  Generally
+    speaking, this is true for all procedures that construct and
+    return structured data.
+</li>
 </ul>
 </li>
 </ul>
