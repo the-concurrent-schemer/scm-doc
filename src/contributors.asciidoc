@@ -39,9 +39,10 @@ Review;;
 section 6.4 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_list.erl[Pairs and lists]::
 [horizontal]
 Development/Test;;
-  in progress (@norton)
+Development/Test;;
+  done
 Review;;
-  n/a
+  +needs peer review+
 
 section 6.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_symbol.erl[Symbols]::
 [horizontal]
