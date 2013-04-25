@@ -466,4 +466,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ------------
 
+== Resources
+
+*Emacs*
+
+An editor (just like a programming language) is a creature of choice.
+An editor should also be a creature of comfort.  If Emacs happens to
+be your favorite creature for editing, I highly recommend the
+following packages:
+
+  * https://github.com/norton/emacs-starter-kit/blob/norton/norton/init.el#L43[whitespace]
+  * https://github.com/norton/emacs-starter-kit/blob/norton/norton/init.el#L75[indent]
+  * erlang with
+    https://github.com/norton/emacs-starter-kit/blob/norton/norton/erlang.el#L31[flymake]
+    (and rebar support)
+
+These packages are very helpful (and comforting) for Erlang
+development.
+
 // -EOF-
