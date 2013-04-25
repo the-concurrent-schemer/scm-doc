@@ -369,6 +369,11 @@ documented nevertheless).
     exception for procedures.  Unlike +eqv?+, +equal?+ compares
     lambda-based procedures recursively.
 
+  * A pair allocated by +cons+ is not guaranteed to be different (in
+    the sense of +eqv?+) from every existing object.  Generally
+    speaking, this is true for all procedures that construct and
+    return structured data.
+
 == Support
 
 Please report software issues and patches to the
