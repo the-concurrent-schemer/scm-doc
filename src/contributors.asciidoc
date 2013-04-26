@@ -47,21 +47,21 @@ Review;;
 section 6.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_symbol.erl[Symbols]::
 [horizontal]
 Development/Test;;
-  +not yet started+
+  in progress (@norton)
 Review;;
   n/a
 
 section 6.6 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_char.erl[Characters]::
 [horizontal]
 Development/Test;;
-  +not yet started+
+  in progress (@norton)
 Review;;
   n/a
 
 section 6.7 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_string.erl[Strings]::
 [horizontal]
 Development/Test;;
-  +not yet started+
+  in progress (@norton)
 Review;;
   n/a
 
@@ -82,16 +82,16 @@ Review;;
 section 6.10 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl[Control features]::
 [horizontal]
 Development/Test;;
-  in progress (@norton)
+  done
 Review;;
-  n/a
+  +needs peer review+
 
 section 6.11 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl[Exceptions]::
 [horizontal]
 Development/Test;;
-  in progress (@norton)
+  done
 Review;;
-  n/a
+  +needs peer review+
 
 section 6.13 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_io.erl[Input and output]::
 [horizontal]
