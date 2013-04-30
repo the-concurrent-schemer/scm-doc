@@ -265,6 +265,17 @@ These features are not specified in the <<R7RS>> specification.
 
 - +letrec-values+ _derived expression binding construct_
 
+These features are also not specified in the <<R7RS>> specification
+but are under consideration and review as potential enhancements.
+
+- Properietary procedures for +bytevector-u8-set!+, +list-set!+,
+  +string-set!+, and +vector-set!+ having the following properties:
+  * different name
+  * same number and meaning of arguments
+  * same intended operation as original procedure but returns a
+    modified copy of the object (as opposed to introducing
+    side-effects)
+
 == Limitations
 
 These <<R7RS>> items are not supported.
@@ -359,6 +370,11 @@ implementation.  This restriction might be removed in the future.
 These <<R7RS>> items are not considered as limitations (but should be
 documented nevertheless).
 
+- Lexical conventions
+  * Scheme symbols, characters, strings, and UTF-8 bytevectors must be
+    composed of Unicode characters.  Non-Unicode characters are
+    rejected.
+
 - +(scheme base)+ library exports
   * +eqv?+ compares all structured data recursively except for
     procedures.
@@ -373,6 +389,10 @@ documented nevertheless).
     the sense of +eqv?+) from every existing object.  Generally
     speaking, this is true for all procedures that construct and
     return structured data.
+
+  * +char->integer+ returns only values equal to the Unicode scalar
+    value of the given character.  +integer->char+ accepts only values
+    that represent Unicode characters.
 
 == Support
 
