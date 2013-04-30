@@ -557,6 +557,27 @@ Education and Training
 <code>letrec-values</code> <small>derived expression binding construct</small>
 </li>
 </ul>
+<p>These features are also not specified in the <a href="#R7RS">[R7RS]</a> specification
+but are under consideration and review as potential enhancements.</p>
+<ul>
+<li>
+Properietary procedures for <code>bytevector-u8-set!</code>, <code>list-set!</code>,
+  <code>string-set!</code>, and <code>vector-set!</code> having the following properties:
+<ul>
+<li>
+different name
+</li>
+<li>
+same number and meaning of arguments
+</li>
+<li>
+same intended operation as original procedure but returns a
+    modified copy of the object (as opposed to introducing
+    side-effects)
+</li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="limitations">
   <div class="page-header">
@@ -794,6 +815,16 @@ implementation.  This restriction might be removed in the future.</p>
 documented nevertheless).</p>
 <ul>
 <li>
+Lexical conventions
+<ul>
+<li>
+Scheme symbols, characters, strings, and UTF-8 bytevectors must be
+    composed of Unicode characters.  Non-Unicode characters are
+    rejected.
+</li>
+</ul>
+</li>
+<li>
 <code>(scheme base)</code> library exports
 <ul>
 <li>
@@ -813,6 +844,11 @@ A pair allocated by <code>cons</code> is not guaranteed to be different (in
     the sense of <code>eqv?</code>) from every existing object.  Generally
     speaking, this is true for all procedures that construct and
     return structured data.
+</li>
+<li>
+<code>char&#8594;integer</code> returns only values equal to the Unicode scalar
+    value of the given character.  <code>integer&#8594;char</code> accepts only values
+    that represent Unicode characters.
 </li>
 </ul>
 </li>
