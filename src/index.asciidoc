@@ -394,6 +394,12 @@ documented nevertheless).
     value of the given character.  +integer->char+ accepts only values
     that represent Unicode characters.
 
+  * +peek-char+ and +peek-u8+ when called on input ports that
+    represent global resources (e.g. standard input) consume the next
+    character or next byte respectively.  A consistent view of
+    subsequent peek and read operations is maintained for each
+    individual port but not globally.
+
 == Support
 
 Please report software issues and patches to the
