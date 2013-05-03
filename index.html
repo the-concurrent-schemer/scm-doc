@@ -850,6 +850,13 @@ A pair allocated by <code>cons</code> is not guaranteed to be different (in
     value of the given character.  <code>integer&#8594;char</code> accepts only values
     that represent Unicode characters.
 </li>
+<li>
+<code>peek-char</code> and <code>peek-u8</code> when called on input ports that
+    represent global resources (e.g. standard input) consume the next
+    character or next byte respectively.  A consistent view of
+    subsequent peek and read operations is maintained for each
+    individual port but not globally.
+</li>
 </ul>
 </li>
 </ul>
