@@ -261,7 +261,7 @@ programs - define-values
 </ul>
 </li>
 <li>
-<small>v0.4.0</small> Sequential "base library without number" <strong>IN PROGRESS</strong>
+<small>v0.4.0</small> Sequential "base library without number" <strong>PUBLISHED</strong>
 <ul>
 <li>
 base library - boolean (0 procedures)
@@ -302,7 +302,7 @@ base library - vector (20 procedures)
 </ul>
 </li>
 <li>
-<small>v0.5.0</small> Sequential "base number library"
+<small>v0.5.0</small> Sequential "base number library" <strong>IN PROGRESS</strong>
 <ul>
 <li>
 libraries - base number (52 procedures), complex (6
@@ -378,6 +378,18 @@ documentation
 </li>
 <li>
 compatibility testing (r7rs, r5rs, etc.)
+</li>
+<li>
+Erlang/OTP enhancements
+<ul>
+<li>
+parsetools (leex.erl)
+</li>
+<li>
+i/o protocol (file.erl, file_io_server.erl, group.erl,
+           io.erl, io_lib.erl, user.erl)
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -561,7 +573,7 @@ Education and Training
 but are under consideration and review as potential enhancements.</p>
 <ul>
 <li>
-Properietary procedures for <code>bytevector-u8-set!</code>, <code>list-set!</code>,
+Proprietary procedures for <code>bytevector-u8-set!</code>, <code>list-set!</code>,
   <code>string-set!</code>, and <code>vector-set!</code> having the following properties:
 <ul>
 <li>
@@ -851,11 +863,21 @@ A pair allocated by <code>cons</code> is not guaranteed to be different (in
     that represent Unicode characters.
 </li>
 <li>
-<code>peek-char</code> and <code>peek-u8</code> when called on input ports that
-    represent global resources (e.g. standard input) consume the next
-    character or next byte respectively.  A consistent view of
-    subsequent peek and read operations is maintained for each
-    individual port but not globally.
+<code>char-ready?</code>, <code>u8-ready?</code>, <code>peek-char</code>, and <code>peek-u8</code> are not
+    supported for input ports that represent global resources
+    (e.g. standard input) until the <small>v0.9.0</small> release.  The Erlang
+    I/O-protocol and corresponding Erlang applications (i.e. kernel
+    and stdlib) require changes to support such ready and peek
+    operations.
+</li>
+<li>
+<code>flush-output-port</code> is a no-op for output ports that represent
+    global resources (e.g. standard output and standard error).
+</li>
+<li>
+<code>get-output-string</code> and <code>get-output-bytevector</code> are unsupported
+    for output ports that represent global resources (e.g. standard
+    output and standard error).
 </li>
 </ul>
 </li>
