@@ -19,92 +19,205 @@ Joseph Wayne Norton <norton@alum.mit.edu>
 == Contributors
 
 *The current call for help is to review, implement _(in Erlang)_, and
-test the Scheme R7RS base library.*  A little bit of Scheme and/or
-Erlang programming experience is helpful but not absolutely necessary.
+test the Scheme R7RS standard libraries.*  A little bit of Scheme
+and/or Erlang programming experience is helpful but not absolutely
+necessary.
 
 section 6.1 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_equality.erl[Equivalence predicates]::
 [horizontal]
 Development/Test;;
   done
 Review;;
-  +needs peer review+
+  _needs peer review_
 
-section 6.3 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_boolean.erl[Booleans]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.4 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_list.erl[Pairs and lists]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_symbol.erl[Symbols]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.6 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_char.erl[Characters]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.7 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_string.erl[Strings]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.8 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_vector.erl[Vectors]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.9 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_bytevector.erl[Bytevectors]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.10 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl[Control features]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.11 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl[Exceptions]::
-[horizontal]
-Development/Test;;
-  done
-Review;;
-  +needs peer review+
-
-section 6.13 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_io.erl[Input and output]::
+section 6.2 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_number.erl[Numbers]::
 [horizontal]
 Development/Test;;
   +not yet started+
 Review;;
   n/a
 
+section 6.3 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_boolean.erl[Booleans]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.4 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_list.erl[Pairs and lists]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_symbol.erl[Symbols]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.6 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_char.erl[Characters]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.7 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_string.erl[Strings]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.8 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_vector.erl[Vectors]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.9 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_bytevector.erl[Bytevectors]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.10 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl[Control features]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.11 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl[Exceptions]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
+section 6.13 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_io.erl[Input and output]::
+[horizontal]
+Development/Test;;
+  done
+Review;;
+  _needs peer review_
+
 section 6.14 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_system.erl[System interface]::
 [horizontal]
 Development/Test;;
   done
 Review;;
-  +needs peer review+
+  _needs peer review_
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_lambda.erl[Case-Lambda Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_char.erl[Char Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_complex.erl[Complex Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_cxr.erl[CxR Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_eval.erl[Eval Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_file.erl[File Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_inexact.erl[Inexact Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_lazy.erl[Lazy Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_load.erl[Load Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_context.erl[Process-Context Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_read.erl[Read Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_repl.erl[Repl Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_time.erl[Time Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_write.erl[Write Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
+appendix A https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_r5rs.erl[R5RS Library]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
 
 CAUTION: _Please stay tuned for CSCM updates.  The specification,
 documentation, and software are under construction._
