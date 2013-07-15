@@ -302,11 +302,16 @@ base library - vector (20 procedures)
 </ul>
 </li>
 <li>
-<small>v0.5.0</small> Sequential "base number library" <strong>IN PROGRESS</strong>
+<small>v0.5.0</small> Sequential "syntax" (previously v0.7.0) <strong>IN PROGRESS</strong>
 <ul>
 <li>
-libraries - base number (52 procedures), complex (6
-       procedures), inexact (14 procedures)
+derived expressions - quasiquote, unquote, unquote-splicing
+</li>
+<li>
+syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
+</li>
+<li>
+programs - define-syntax, define-record-type
 </li>
 </ul>
 </li>
@@ -329,16 +334,11 @@ tools - scm shell
 </ul>
 </li>
 <li>
-<small>v0.7.0</small> Sequential "syntax"
+<small>v0.7.0</small> Sequential "base number library" (previously v0.5.0)
 <ul>
 <li>
-derived expressions - quasiquote, unquote, unquote-splicing
-</li>
-<li>
-syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
-</li>
-<li>
-programs - define-syntax, define-record-type
+libraries - base number (52 procedures), complex (6
+       procedures), inexact (14 procedures)
 </li>
 </ul>
 </li>
@@ -683,137 +683,6 @@ The maximum number of arguments that may be passed to a procedure
 <li>
 Inexact constants have double precision regardless of the
     specified exponent marker.
-</li>
-<li>
-The following symbols are not allowed as the variable argument to
-    <code>set!</code>, <code>define</code>, <code>define-values</code>, <code>define-syntax</code>,
-    <code>define-record-type</code>, and <code>define-library</code> procedure calls.
-<ul>
-<li>
-<code>quote</code> <small>section 4.1.2</small>
-</li>
-<li>
-<code>lambda</code> <small>section 4.1.4</small>
-</li>
-<li>
-<code>if</code> <small>section 4.1.5</small>
-</li>
-<li>
-<code>set!</code> <small>section 4.1.6</small>
-</li>
-<li>
-<code>include</code> <small>section 4.1.7</small>
-</li>
-<li>
-<code>include-ci</code> <small>section 4.1.7</small>
-</li>
-<li>
-<code>include-lib</code> <small>enhancement</small>
-</li>
-<li>
-<code>include-lib-ci</code> <small>unsupported enhancement</small>
-</li>
-<li>
-<code>cond</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>case</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>and</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>or</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>when</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>unless</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>cond-expand</code> <small>section 4.2.1</small>
-</li>
-<li>
-<code>let</code> <small>section 4.2.2</small>
-</li>
-<li>
-<code>let  **</code> <small>section 4.2.2</small>
-</li>
-<li>
-<code>letrec</code> <small>section 4.2.2</small>
-</li>
-<li>
-<code>letrec  **</code> <small>section 4.2.2</small>
-</li>
-<li>
-<code>let-values</code> <small>section 4.2.2</small>
-</li>
-<li>
-<code>let  **-values</code> <small>section 4.2.2</small>
-</li>
-<li>
-<code>letrec-values</code> <small>enhancement</small>
-</li>
-<li>
-<code>begin</code> <small>section 4.2.3</small>
-</li>
-<li>
-<code>do</code> <small>section 4.2.4</small>
-</li>
-<li>
-<code>make-parameter</code> <small>section 4.2.6</small>
-</li>
-<li>
-<code>parameterize</code> <small>section 4.2.6</small>
-</li>
-<li>
-<code>guard</code> <small>section 4.2.7</small>
-</li>
-<li>
-<code>quasiquote</code> <small>section 4.2.8</small>
-</li>
-<li>
-<code>unquote</code> <small>section 4.2.8</small>
-</li>
-<li>
-<code>unquote-splicing</code> <small>section 4.2.8</small>
-</li>
-<li>
-<code>let-syntax</code> <small>section 4.3.1</small>
-</li>
-<li>
-<code>letrec-syntax</code> <small>section 4.3.1</small>
-</li>
-<li>
-<code>syntax-rules</code> <small>section 4.3.2</small>
-</li>
-<li>
-<code>syntax-error</code> <small>section 4.3.2</small>
-</li>
-<li>
-<code>import</code> <small>section 5.2</small>
-</li>
-<li>
-<code>define</code> <small>section 5.3.1 and 5.3.2</small>
-</li>
-<li>
-<code>define-values</code> <small>section 5.3.3</small>
-</li>
-<li>
-<code>define-syntax</code> <small>section 5.4</small>
-</li>
-<li>
-<code>define-record-type</code> <small>section 5.5</small>
-</li>
-<li>
-<code>define-library</code> <small>section 5.6</small>
-<p><span class="label label-note">Note</span> These symbols are reserved symbols in CSCM&#8217;s Scheme expression
-analyzer.  This implementation strategy prevents overriding the
-behavior of the corresponding Scheme expressions with a user-defined
-implementation.  This restriction might be removed in the future.</p>
-</li>
-</ul>
 </li>
 </ul>
 </li>
