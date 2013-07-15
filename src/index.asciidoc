@@ -153,9 +153,10 @@ This roadmap is a +DRAFT+.
     ** base library - system (0 procedures)
     ** base library - vector (20 procedures)
 
-  * _v0.5.0_ Sequential "base number library" *IN PROGRESS*
-    ** libraries - base number (52 procedures), complex (6
-       procedures), inexact (14 procedures)
+  * _v0.5.0_ Sequential "syntax" (previously v0.7.0) *IN PROGRESS*
+    ** derived expressions - quasiquote, unquote, unquote-splicing
+    ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
+    ** programs - define-syntax, define-record-type
 
   * _v0.6.0_ Sequential "libraries"
     ** programs - import, define-library
@@ -166,10 +167,9 @@ This roadmap is a +DRAFT+.
        procedures), write (8 procedures), r5rs (2 procedures)
     ** tools - scm shell
 
-  * _v0.7.0_ Sequential "syntax"
-    ** derived expressions - quasiquote, unquote, unquote-splicing
-    ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
-    ** programs - define-syntax, define-record-type
+  * _v0.7.0_ Sequential "base number library" (previously v0.5.0)
+    ** libraries - base number (52 procedures), complex (6
+       procedures), inexact (14 procedures)
 
   * _v0.8.0_ Sequential "features"
     ** extensions - Erlang-style pattern matching, records, and binary
@@ -318,56 +318,6 @@ These <<R7RS>> items are not supported.
 
   * Inexact constants have double precision regardless of the
     specified exponent marker.
-
-  * The following symbols are not allowed as the variable argument to
-    +set!+, +define+, +define-values+, +define-syntax+,
-    +define-record-type+, and +define-library+ procedure calls.
-
-    ** +quote+ _section 4.1.2_
-    ** +lambda+ _section 4.1.4_
-    ** +if+ _section 4.1.5_
-    ** +set!+ _section 4.1.6_
-    ** +include+ _section 4.1.7_
-    ** +include-ci+ _section 4.1.7_
-    ** +include-lib+ _enhancement_
-    ** +include-lib-ci+ _unsupported enhancement_
-    ** +cond+ _section 4.2.1_
-    ** +case+ _section 4.2.1_
-    ** +and+ _section 4.2.1_
-    ** +or+ _section 4.2.1_
-    ** +when+ _section 4.2.1_
-    ** +unless+ _section 4.2.1_
-    ** +cond-expand+ _section 4.2.1_
-    ** +let+ _section 4.2.2_
-    ** +let  **+ _section 4.2.2_
-    ** +letrec+ _section 4.2.2_
-    ** +letrec  **+ _section 4.2.2_
-    ** +let-values+ _section 4.2.2_
-    ** +let  **-values+ _section 4.2.2_
-    ** +letrec-values+ _enhancement_
-    ** +begin+ _section 4.2.3_
-    ** +do+ _section 4.2.4_
-    ** +make-parameter+ _section 4.2.6_
-    ** +parameterize+ _section 4.2.6_
-    ** +guard+ _section 4.2.7_
-    ** +quasiquote+ _section 4.2.8_
-    ** +unquote+ _section 4.2.8_
-    ** +unquote-splicing+ _section 4.2.8_
-    ** +let-syntax+ _section 4.3.1_
-    ** +letrec-syntax+ _section 4.3.1_
-    ** +syntax-rules+ _section 4.3.2_
-    ** +syntax-error+ _section 4.3.2_
-    ** +import+ _section 5.2_
-    ** +define+ _section 5.3.1 and 5.3.2_
-    ** +define-values+ _section 5.3.3_
-    ** +define-syntax+ _section 5.4_
-    ** +define-record-type+ _section 5.5_
-    ** +define-library+ _section 5.6_
-+
-NOTE: These symbols are reserved symbols in CSCM's Scheme expression
-analyzer.  This implementation strategy prevents overriding the
-behavior of the corresponding Scheme expressions with a user-defined
-implementation.  This restriction might be removed in the future.
 
 == Surprises
 
