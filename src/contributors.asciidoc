@@ -18,6 +18,8 @@ Joseph Wayne Norton <norton@alum.mit.edu>
 
 == Contributors
 
+image:images/logo.jpg[width="225",height="225",alt="Logo"]
+
 *The current call for help is to review, implement _(in Erlang)_, and
 test the Scheme R7RS standard libraries.*  A little bit of Scheme
 and/or Erlang programming experience is helpful but not absolutely
@@ -556,6 +558,8 @@ AsciiDoc (Optional)::
   * _required for generating CSCM's markdown documentation_
 
 == Copyright and License
+
+image:images/logo.jpg[width="200",height="200",alt="Logo"]
 
 ------------
 The MIT License

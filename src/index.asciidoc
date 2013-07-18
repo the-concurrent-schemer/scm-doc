@@ -18,6 +18,8 @@ Joseph Wayne Norton <norton@alum.mit.edu>
 
 == Overview
 
+image:images/logo.jpg[width="225",height="225",alt="Logo"]
+
 "The Concurrent Schemer" (CSCM) is an implementation of the Scheme
 programming language built on top of the Erlang Virtual Machine.  CSCM
 combines the sequential programming model of Scheme with the
@@ -391,6 +393,8 @@ http://the-concurrent-schemer.github.io/scm-doc/contributors.html[Contributor's
 Guide] for more information.
 
 == Copyright and License
+
+image:images/logo.jpg[width="200",height="200",alt="Logo"]
 
 ------------
 The MIT License

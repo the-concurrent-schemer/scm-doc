@@ -19,6 +19,7 @@ clean:
 %.html: %.asciidoc Makefile
 	cd $(<D) && asciidoc $(<F)
 	@perl -i -pe 's~class="brand" href="#"~class="brand" href="https://github.com/the-concurrent-schemer"~;' $(@)
+	@perl -i -pe 's~rel="shortcut icon" href="./bootstrap/docs/assets/ico/favicon.ico"~rel="shortcut icon" href="http://www.gravatar.com/avatar/4b50e81570fd42f2d9a43c87f8c19456.png"~;' $(@)
 
 %.pdf: %.asciidoc Makefile
 	cd $(<D) && a2x -f pdf $(<F)

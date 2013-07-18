@@ -63,6 +63,8 @@ Joseph Wayne Norton <norton@alum.mit.edu>
 
 == Overview
 
+image:images/logo.jpg[width="225",height="225",alt="Logo"]
+
 - CSCM
   * _v0.1.0_ Sequential "datum"
     ** datum model
