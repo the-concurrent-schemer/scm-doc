@@ -271,6 +271,9 @@ These features are not specified in the <<R7RS>> specification.
 
 - +letrec-values+ _derived expression binding construct_
 
+- +let*-syntax+ and +letrec*-syntax+ _derived expression binding
+  constructs for syntactic keywords_
+
 These features are also not specified in the <<R7RS>> specification
 but are under consideration and review as potential enhancements.
 
@@ -330,6 +333,11 @@ documented nevertheless).
   * Scheme symbols, characters, strings, and UTF-8 bytevectors must be
     composed of Unicode characters.  Non-Unicode characters are
     rejected.
+
+- Binding constructs for syntatic keywords
+  * Proprietary primitive expressions +lambda-syntax+, +set!-syntax+,
+    and +begin-syntax+ are used to implement binding constructs for
+    syntatic keywords.
 
 - +(scheme base)+ library exports
   * +eqv?+ compares all structured data recursively except for
