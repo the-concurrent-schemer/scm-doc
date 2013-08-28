@@ -20,10 +20,18 @@ Joseph Wayne Norton <norton@alum.mit.edu>
 
 image:images/logo.jpg[width="225",height="225",alt="Logo"]
 
-*The current call for help is to review, implement _(in Erlang)_, and
-test the Scheme R7RS standard libraries.*  A little bit of Scheme
-and/or Erlang programming experience is helpful but not absolutely
-necessary.
+*The primary call for help is to review, implement _(in Erlang)_, and
+test the Scheme R7RS standard libraries.* A secondary call for help is
+to identify, to fix, and to resolve key issues posted to CSCM's issue
+tracker.  A little bit of Scheme and/or Erlang programming experience
+is helpful but not absolutely necessary.
+
+section 2.1 https://github.com/the-concurrent-schemer/scm/issues/2[CSCM Issue #2]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
 
 section 6.1 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_equality.erl[Equivalence predicates]::
 [horizontal]
