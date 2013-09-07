@@ -6430,12 +6430,13 @@ Subparts of <code>&lt;Sysarch&gt;</code> split by the "-" character token
   <div class="page-header">
     <h1>Documentation</h1>
   </div>
-<p>This
+<p>This draft
 <a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf">overview</a>
 paper of the Scheme programming language download-able from the Scheme
-Report's website is a good place to start.  The complete Scheme R7RS
-<a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf">draft9</a>
-specification available from the same website is the best next step.</p>
+Report's website is a good place to start.  The final Scheme R7RS
+<a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf">small
+report</a> specification available from the same website is the best next
+step.</p>
 </section>
 <section id="roadmap">
   <div class="page-header">
@@ -6552,16 +6553,26 @@ base library - vector (20 procedures)
 </ul>
 </li>
 <li>
-<small>v0.5.0</small> Sequential "syntax" (previously v0.7.0) <strong>IN PROGRESS</strong>
+<small>v0.5.0</small> Sequential "syntax" (part 1 of 2, previously v0.7.0) <strong>PUBLISHED</strong>
+<ul>
+<li>
+<strong>beta</strong> syntax - lambda-syntax, set!-syntax, begin-syntax,
+       let-syntax, let*-syntax, letrec-syntax, letrec*-syntax,
+       syntax-rules, syntax-error
+</li>
+<li>
+programs - define-syntax
+</li>
+</ul>
+</li>
+<li>
+<small>v0.5.5</small> Sequential "syntax" (part 2 of 2, previously v0.7.0) <strong>IN PROGRESS</strong>
 <ul>
 <li>
 derived expressions - quasiquote, unquote, unquote-splicing
 </li>
 <li>
-syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
-</li>
-<li>
-programs - define-syntax, define-record-type
+programs - define-record-type
 </li>
 </ul>
 </li>
@@ -6616,6 +6627,16 @@ performance - lexical addressing for variable lookup
 <ul>
 <li>
 bug fixes
+</li>
+<li>
+improvements
+<ul>
+<li>
+replace macro template expansion mechanism with a
+           state-based approached that can detect invalid macro
+           definitions and/or macro uses.
+</li>
+</ul>
 </li>
 <li>
 refactoring
@@ -6818,6 +6839,10 @@ Education and Training
 <li>
 <code>letrec-values</code> <small>derived expression binding construct</small>
 </li>
+<li>
+<code>let*-syntax</code> and <code>letrec*-syntax</code> <small>derived expression binding
+  constructs for syntactic keywords</small>
+</li>
 </ul>
 <p>These features are also not specified in the <a href="#R7RS">[R7RS]</a> specification
 but are under consideration and review as potential enhancements.</p>
@@ -6952,6 +6977,16 @@ Lexical conventions
 Scheme symbols, characters, strings, and UTF-8 bytevectors must be
     composed of Unicode characters.  Non-Unicode characters are
     rejected.
+</li>
+</ul>
+</li>
+<li>
+Binding constructs for syntatic keywords
+<ul>
+<li>
+Proprietary primitive expressions <code>lambda-syntax</code>, <code>set!-syntax</code>,
+    and <code>begin-syntax</code> are used to implement binding constructs for
+    syntatic keywords.
 </li>
 </ul>
 </li>
@@ -13383,9 +13418,8 @@ issue tracker
 </li>
 <li>
 <p>
-<a id="R7RS"></a>[R7RS] R7RS <small>Draft</small>. <em>Revised 7th Report on the Algorithmic
-  Language
-  Scheme</em>. <a href="http://www.scheme-reports.org/2012/working-group-1.html">http://www.scheme-reports.org/2012/working-group-1.html</a>
+<a id="R7RS"></a>[R7RS] R7RS. <em>Revised 7th Report on the Algorithmic Language
+  Scheme</em>. <a href="http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf">http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf</a>
 </p>
 </li>
 <li>
@@ -13465,20 +13499,28 @@ issue tracker
 </li>
 </ul></div>
 <p><strong>Related</strong></p>
-<ul>
+<div class="ulist bibliography"><div class="title">Websites</div><ul>
 <li>
+<p>
 <a id="ELIXIR"></a>[ELIXIR] elixir. <a href="http://elixir-lang.org">http://elixir-lang.org</a>
+</p>
 </li>
 <li>
+<p>
 <a id="JOXA"></a>[JOXA] Joxa. <a href="http://joxa.org">http://joxa.org</a>
+</p>
 </li>
 <li>
+<p>
 <a id="LFE"></a>[LFE] Lisp Flavored Erlang. <a href="http://lfe.github.com">http://lfe.github.com</a>
+</p>
 </li>
 <li>
+<p>
 <a id="TERMITE"></a>[TERMITE] Termite Scheme. <a href="http://code.google.com/p/termite/">http://code.google.com/p/termite/</a>
+</p>
 </li>
-</ul>
+</ul></div>
 </section>
         </div>
       </div>
