@@ -33,6 +33,27 @@ Development/Test;;
 Review;;
   n/a
 
+section 4.3 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_macro.erl[Macros]::
+[horizontal]
+Development/Test;;
+  *beta* done
+Review;;
+  _needs peer review_
+
+section 5.4 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_program.erl[Syntax definitions]::
+[horizontal]
+Development/Test;;
+  *beta* done
+Review;;
+  _needs peer review_
+
+section 5.5 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_program.erl[Record-type definitions]::
+[horizontal]
+Development/Test;;
+  +not yet started+
+Review;;
+  n/a
+
 section 6.1 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_equality.erl[Equivalence predicates]::
 [horizontal]
 Development/Test;;
@@ -332,9 +353,9 @@ R.
 
 *Optional (but helpful)*
 
-1. read the Scheme R7RS
-   http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf[draft9]
-   specification
+1. read the final Scheme R7RS
+   http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf[small
+   report] specification
 
 2. review and understand
    a. the layout of the scm git
@@ -402,14 +423,18 @@ functions for an Erlang NIF library.
       expressions
 
    i. Scheme
+      https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_macro.erl[macro]
+      expressions
+
+   j. Scheme
       https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_control.erl#L124[control
       features] base library
 
-   j. Scheme
+   k. Scheme
       https://github.com/the-concurrent-schemer/scm/blob/dev/src/scml_base_exception.erl#L71[exceptions]
       base library
 
-   k. ...
+   l. ...
 
 3. run xref
 +
@@ -442,38 +467,38 @@ be added later.
        12 unique files.
         0 files ignored.
 
- http://cloc.sourceforge.net v 1.58  T=0.5 s (24.0 files/s, 3918.0 lines/s)
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (24.0 files/s, 3856.0 lines/s)
  -------------------------------------------------------------------------------
  Language                     files          blank        comment           code
  -------------------------------------------------------------------------------
- Erlang (yecc)                    2            108             79            487
+ Erlang (yecc)                    2            108             79            471
  Erlang (leex)                    5            192            264            332
- Erlang                           5             45            124            328
+ Erlang                           5             46            124            312
  -------------------------------------------------------------------------------
- SUM:                            12            345            467           1147
+ SUM:                            12            346            467           1115
  -------------------------------------------------------------------------------
 ------
 
 *Scheme interpreter*
 
-\~*500 C/C++* LOC and ~*1,700 Erlang* LOC implements all Scheme
-primitive and derived expressions.
+\~*600 C/C++* LOC and ~*3,200 Erlang* LOC implements all Scheme
+primitive, derived, program, and macro expressions.
 
 ------
- $ ~/bin/cloc src/scmi_* c_src
-       14 text files.
-       14 unique files.
+ $ cloc src/scmi_* c_src
+       23 text files.
+       23 unique files.
         0 files ignored.
 
- http://cloc.sourceforge.net v 1.58  T=0.5 s (28.0 files/s, 6286.0 lines/s)
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (46.0 files/s, 10914.0 lines/s)
  -------------------------------------------------------------------------------
  Language                     files          blank        comment           code
  -------------------------------------------------------------------------------
- Erlang                          10            395            401           1731
- C++                              2             93             55            369
- C/C++ Header                     2             13             44             42
+ Erlang                          15            669            659           3157
+ C++                              4            140            105            541
+ C/C++ Header                     4             26             88             72
  -------------------------------------------------------------------------------
- SUM:                            14            501            500           2142
+ SUM:                            23            835            852           3770
  -------------------------------------------------------------------------------
 ------
 
@@ -483,23 +508,23 @@ primitive and derived expressions.
 dynamic-wind, and other control procedures.
 
 ------
- $ ~/bin/cloc src/scml_base_control.erl src/scml_base_exception.erl
+ $ cloc src/scml_base_control.erl src/scml_base_exception.erl
         2 text files.
         2 unique files.
         0 files ignored.
 
- http://cloc.sourceforge.net v 1.58  T=0.5 s (4.0 files/s, 1274.0 lines/s)
+ http://cloc.sourceforge.net v 1.58  T=0.5 s (4.0 files/s, 1238.0 lines/s)
  -------------------------------------------------------------------------------
  Language                     files          blank        comment           code
  -------------------------------------------------------------------------------
- Erlang                           2             67            187            383
+ Erlang                           2             67            187            365
  -------------------------------------------------------------------------------
- SUM:                             2             67            187            383
+ SUM:                             2             67            187            365
  -------------------------------------------------------------------------------
 ------
 
 NOTE: The above measurements were taken on a snapshot of CSCM after
-v0.3.0 with a modified version of cloc for detecting Erlang leex/yecc
+v0.5.0 with a modified version of cloc for detecting Erlang leex/yecc
 files.
 
 == Submissions
@@ -552,7 +577,7 @@ https://github.com/spawngrid/kerl[kerl] is highly recommended
 
 Git (Mandatory)::
 - Git - http://git-scm.com/
-  * Git 1.5.4 or newer, Git 1.8.2 has been tested most recently
+  * Git 1.5.4 or newer, Git 1.8.4 has been tested most recently
   * _required for GitHub_
 - GitHub - https://github.com
   * Anonymous read-only access using the GIT protocol is default.
@@ -561,7 +586,7 @@ Git (Mandatory)::
 
 Python (Optional)::
 - Python - http://www.python.org
-  * Python 2.4 or newer, Python 2.7.4 has been tested most recently
+  * Python 2.4 or newer, Python 2.7.5 has been tested most recently
     (CAUTION: Python 3.x might be too new)
   * _required for AsciiDoc_
 

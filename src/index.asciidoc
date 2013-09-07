@@ -102,12 +102,13 @@ CSCM is aimed as an:
 
 == Documentation
 
-This
+This draft
 http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/overview.pdf[overview]
 paper of the Scheme programming language download-able from the Scheme
-Report\'s website is a good place to start.  The complete Scheme R7RS
-http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs-draft-9.pdf[draft9]
-specification available from the same website is the best next step.
+Report\'s website is a good place to start.  The final Scheme R7RS
+http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf[small
+report] specification available from the same website is the best next
+step.
 
 == Roadmap
 
@@ -155,10 +156,15 @@ This roadmap is a +DRAFT+.
     ** base library - system (0 procedures)
     ** base library - vector (20 procedures)
 
-  * _v0.5.0_ Sequential "syntax" (previously v0.7.0) *IN PROGRESS*
+  * _v0.5.0_ Sequential "syntax" (part 1 of 2, previously v0.7.0) *PUBLISHED*
+    ** *beta* syntax - lambda-syntax, set!-syntax, begin-syntax,
+       let-syntax, let*-syntax, letrec-syntax, letrec*-syntax,
+       syntax-rules, syntax-error
+    ** programs - define-syntax
+
+  * _v0.5.5_ Sequential "syntax" (part 2 of 2, previously v0.7.0) *IN PROGRESS*
     ** derived expressions - quasiquote, unquote, unquote-splicing
-    ** syntax - let-syntax, letrec-syntax, syntax-rules, syntax-error
-    ** programs - define-syntax, define-record-type
+    ** programs - define-record-type
 
   * _v0.6.0_ Sequential "libraries"
     ** programs - import, define-library
@@ -183,6 +189,10 @@ This roadmap is a +DRAFT+.
 
   * _v0.9.0_ Sequential "maintenance"
     ** bug fixes
+    ** improvements
+       *** replace macro template expansion mechanism with a
+           state-based approached that can detect invalid macro
+           definitions and/or macro uses.
     ** refactoring
     ** performance tuning
     ** documentation
@@ -461,9 +471,8 @@ An incomplete list of CSCM, Scheme, Erlang, and Related resources.
 .Specifications
 - [[[RNRS]]] Scheme Reports Process. http://www.scheme-reports.org
 
-- [[[R7RS]]] R7RS _Draft_. 'Revised 7th Report on the Algorithmic
-  Language
-  Scheme'. http://www.scheme-reports.org/2012/working-group-1.html
+- [[[R7RS]]] R7RS. 'Revised 7th Report on the Algorithmic Language
+  Scheme'. http://trac.sacrideo.us/wg/raw-attachment/wiki/WikiStart/r7rs.pdf
 
 - [[[R5RS]]] R5RS. 'Revised 5th Report on the Algorithmic Language
   Scheme'. http://www.schemers.org/Documents/Standards/R5RS/r5rs.pdf
@@ -507,6 +516,8 @@ An incomplete list of CSCM, Scheme, Erlang, and Related resources.
 
 *Related*
 
+[bibliography]
+.Websites
 - [[[ELIXIR]]] elixir. http://elixir-lang.org
 
 - [[[JOXA]]] Joxa. http://joxa.org
