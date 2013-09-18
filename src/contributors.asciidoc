@@ -569,7 +569,7 @@ later.
 
 Erlang/OTP (Mandatory)::
 - Erlang - http://www.erlang.org/
-  * R16B01 or newer, R16B01 has been tested most recently
+  * R16B02 or newer, R16B02 has been tested most recently
   * _required for development_
 ++
 TIP: If you need to build and to install Erlang on your own,
