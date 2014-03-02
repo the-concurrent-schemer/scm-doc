@@ -21,7 +21,7 @@
 // combines the sequential programming model of Scheme with the
 // concurrent, distributed, and fault-tolerant programming model of
 // Erlang.  The default language is Scheme R7RS.  The default virtual
-// machine is Erlang/OTP R16B02 or higher.
+// machine is Erlang/OTP R16B03-1 or higher.
 //
 // The goal of this workshop is to provide a concurrent introduction to
 // Scheme and Erlang.  An overview of Scheme will be presented based on
