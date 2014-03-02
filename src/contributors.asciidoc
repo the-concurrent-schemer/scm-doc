@@ -578,7 +578,7 @@ https://github.com/spawngrid/kerl[kerl] is highly recommended
 
 Git (Mandatory)::
 - Git - http://git-scm.com/
-  * Git 1.5.4 or newer, Git 1.8.4 has been tested most recently
+  * Git 1.5.4 or newer, Git 1.9.0 has been tested most recently
   * _required for GitHub_
 - GitHub - https://github.com
   * Anonymous read-only access using the GIT protocol is default.
@@ -587,13 +587,13 @@ Git (Mandatory)::
 
 Python (Optional)::
 - Python - http://www.python.org
-  * Python 2.4 or newer, Python 2.7.5 has been tested most recently
+  * Python 2.4 or newer, Python 2.7.6 has been tested most recently
     (CAUTION: Python 3.x might be too new)
   * _required for AsciiDoc_
 
 AsciiDoc (Optional)::
 - AsciiDoc - http://www.methods.co.nz/asciidoc/index.html
-  * Must be version 8.6.1 or newer, 8.6.8 has been tested most
+  * Must be version 8.6.1 or newer, 8.6.9 has been tested most
     recently
   * _required for generating CSCM's markdown documentation_
 
