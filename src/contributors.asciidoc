@@ -29,9 +29,9 @@ is helpful but not absolutely necessary.
 section 2.1 https://github.com/the-concurrent-schemer/scm/issues/2[CSCM Issue #2]::
 [horizontal]
 Development/Test;;
-  +not yet started+
+  done
 Review;;
-  n/a
+  _needs peer review_
 
 section 4.3 https://github.com/the-concurrent-schemer/scm/blob/dev/src/scmi_analyze_macro.erl[Macros]::
 [horizontal]
