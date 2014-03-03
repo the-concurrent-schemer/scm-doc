@@ -257,7 +257,6 @@ documentation, and software are under construction._
 
 - pending R7RS draft 10 changes
   * Remove extra exponent markers from formal syntax
-  * Revert to R5RS equivalence semantics for procedures
 
 == Getting Started
 

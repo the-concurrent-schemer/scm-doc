@@ -351,19 +351,10 @@ documented nevertheless).
     syntatic keywords.
 
 - +(scheme base)+ library exports
-  * +eqv?+ compares all structured data recursively except for
-    procedures.
+  * +eqv?+ treats _all_ pairs, vectors, bytevectors, records, and
+    strings as having distinct locations.
 
   * +eqv?+ and +eq?+ share the same implementation.
-
-  * +eqv?+ and +equal?+ share the same implementation with one
-    exception for procedures.  Unlike +eqv?+, +equal?+ compares
-    lambda-based procedures recursively.
-
-  * A pair allocated by +cons+ is not guaranteed to be different (in
-    the sense of +eqv?+) from every existing object.  Generally
-    speaking, this is true for all procedures that construct and
-    return structured data.
 
   * +char->integer+ returns only values equal to the Unicode scalar
     value of the given character.  +integer->char+ accepts only values
