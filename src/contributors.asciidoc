@@ -568,7 +568,7 @@ later.
 
 Erlang/OTP (Mandatory)::
 - Erlang - http://www.erlang.org/
-  * R16B03-1 or newer, R16B03-1 has been tested most recently
+  * 17 or newer, 17 has been tested most recently
   * _required for development_
 ++
 TIP: If you need to build and to install Erlang on your own,
@@ -576,7 +576,7 @@ https://github.com/spawngrid/kerl[kerl] is highly recommended
 
 Git (Mandatory)::
 - Git - http://git-scm.com/
-  * Git 1.5.4 or newer, Git 1.9.0 has been tested most recently
+  * Git 1.5.4 or newer, Git 1.9.3 has been tested most recently
   * _required for GitHub_
 - GitHub - https://github.com
   * Anonymous read-only access using the GIT protocol is default.
